@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./_Styles/Index.scss";
 
 
 class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>Hello World!</h1>
+                <div className="Container">
+                  <h1>Koala-T-Poker League</h1>
+                </div>
             </div>
         )
     }
