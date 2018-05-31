@@ -1,13 +1,15 @@
 .svg-container {
     background-color: #222;
     display: flex;
+    width: 50%;
+    border-radius: 10px 10px 0 0;
 
     img {
         flex-basis: 30%
     }
 
     h1 {
-        font-size: 100px;
+        font-size: 50px;
         flex-basis: 70%;
         color: white;
     }
