@@ -4,7 +4,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./_Styles/Index.scss";
 import Logo from './Components/logo';
+<<<<<<< HEAD
 import PlayerView from "./Components/player-view";
+=======
+>>>>>>> origin/master
 import Test from './Components/test';
 
 import KoalaTApi from './Actions/koalat-api';
