@@ -1,16 +1,51 @@
+$small: 350px;
+$medium: 700px;
+$large: 1000px;
+
+
 .svg-container {
     background-color: #222;
     display: flex;
     width: 50%;
     border-radius: 10px 10px 0 0;
+    position: relative;
+
+    @media screen and (max-width: $medium) {
+        width: 75%;
+    }
+
+    @media screen and (max-width: $small) {
+        width: 100%;
+    }
 
     img {
-        flex-basis: 30%
+        flex-basis: 30%;
     }
 
     h1 {
         font-size: 50px;
         flex-basis: 70%;
         color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: auto;
+
+        @media screen and (max-width: $large) {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: $medium) {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: $small) {
+            font-size: 25px;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
     }
+
 }
