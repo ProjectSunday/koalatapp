@@ -1,10 +1,12 @@
 import React from 'react';
-import Logo from "./logo";
+import Logo from './logo';
+import LeaderBoard from './leader-board';
 import '../_Styles/player-view.scss';
 
 class PlayerView extends React.Component {
     render() {
         return (
+        <div>
           <div className="container">
           <Logo />
           
@@ -14,6 +16,8 @@ class PlayerView extends React.Component {
           </div>
 
           </div>
+
+        </div>
         ) 
     }
 }
