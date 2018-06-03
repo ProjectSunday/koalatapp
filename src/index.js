@@ -4,7 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./_Styles/Index.scss";
 import LeaderBoard from './Components/leader-board';
-import PlayerView from "./Components/player-view";
+import LoginView from "./Components/login-view";
 import Test from './Components/test';
 
 import KoalaTApi from './Actions/koalat-api';
@@ -26,7 +26,7 @@ class App extends React.Component {
         return (
             <div>
               <LeaderBoard />
-               {/* <PlayerView />  */}
+              <LoginView />  
               {/* <Test /> */}
             </div>
         )
