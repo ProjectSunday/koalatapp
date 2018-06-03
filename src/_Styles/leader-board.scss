@@ -1,5 +1,32 @@
-.container_2 {
-    height: 400px;
-    width: 800px;
+.leader-board-box {
     background-color: white;
+    height: 500px;
+    width: 700px;
+    margin: auto;
+    border-radius: 5px 5px 0 0;
+
+    .title {
+        text-align: center;
+        padding-top: 10px;
+        font-size: 30px;
+        height: 50px;
+        color: white;
+        border-radius: 5px 5px 0 0;
+        background-color: #222;
+
+    }
+
+    .board-row {
+        height: 50px;
+        width: 100%;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .board-row:nth-child(2n) {
+        background-color: #eee;
+    }
+
+    
+
 }
