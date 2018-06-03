@@ -6,13 +6,22 @@
     border-radius: 5px 5px 0 0;
 
     .title {
-        text-align: center;
-        padding-top: 10px;
-        font-size: 30px;
-        height: 50px;
+        display: flex;
+        height: 100px;
         color: white;
         border-radius: 5px 5px 0 0;
         background-color: #222;
+
+        h1 {
+         flex-basis: 80%;
+         font-size: 50px;
+         margin: auto;
+
+        }
+
+        img {
+           flex-basis: 20%; 
+        }
 
     }
 
