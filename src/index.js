@@ -3,6 +3,7 @@ import 'babel-polyfill';
 import React from "react";
 import ReactDOM from "react-dom";
 import "./_Styles/Index.scss";
+import LeaderBoard from './Components/leader-board';
 import PlayerView from "./Components/player-view";
 import Test from './Components/test';
 
@@ -24,8 +25,9 @@ class App extends React.Component {
     render() {
         return (
             <div>
-              <PlayerView />
-              <Test />
+              <LeaderBoard />
+             {/*   <PlayerView /> */}
+              {/* <Test /> */}
             </div>
         )
     }
