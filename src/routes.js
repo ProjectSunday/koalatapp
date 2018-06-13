@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import LoginView from './Components/login-view';
 import LeaderBoard from './Components/leader-board';
 import Test from './Components/test';
@@ -18,13 +18,23 @@ const KoalaRoutes = () => (
                 <Link to="/test">Test </Link>
             </li>
           </ul>
-
+          <Switch>
           <Route exact path="/" component={LoginView} />
           <Route path="/leaderboard" component={LeaderBoard} />
           <Route path="/test" component={Test} />
+          <Route component={NoMatch} />
+          </Switch>
 
         </div>   
     </BrowserRouter>
+)
+
+const NoMatch = ({ location }) => (
+    <div>
+        <h3>
+          No Match for <code>{location.pathname}</code>
+        </h3>
+    </div>
 )
 
 export default KoalaRoutes;
