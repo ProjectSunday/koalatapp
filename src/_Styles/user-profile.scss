@@ -1,0 +1,24 @@
+.user-profile-container {
+    width: 50%;
+    height: 500px;
+    margin: auto;
+
+
+    .user-content {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        flex-basis: 50%;
+        border-radius: 10px 10px 0px 0px;
+
+        img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            margin-top: 10px;
+        }
+    }
+
+}
