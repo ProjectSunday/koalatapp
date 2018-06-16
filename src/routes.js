@@ -4,6 +4,7 @@ import HomeView from './home-view';
 import PlayerView from './Components/login-view';
 import LeaderBoard from './Components/leader-board';
 import Navbar from './Components/navbar';
+import UserProfile from './Components/user-profile';
 import Test from './Components/test';
 import './_Styles/routes.scss';
 
@@ -15,11 +16,11 @@ const StyleLink = {
 }
 const KoalaRoutes = () => (
     <BrowserRouter>
-        <div>
+        <div className="routes-box">
           <Navbar />
           <Switch>
           <Route exact path="/" component={HomeView} />
-          <Route path="/leaderboard" component={LeaderBoard} />
+          <Route path="/userprofile" component={UserProfile} />
           <Route component={NoMatch} />
           </Switch>
 
