@@ -1,0 +1,28 @@
+.navbar {
+    height: 50px;
+    width: 100%;
+    background-color: #222;
+    
+    ul {
+        display: flex;
+        justify-content: center;
+
+        li {
+            list-style: none;
+            padding: 10px;
+            font-size: 25px;
+            
+            a {
+                color: white;
+                text-decoration: none;
+                opacity: 0.6;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+            }
+        }
+    
+    }
+}

@@ -1,27 +1,25 @@
 import React from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import LoginView from './Components/login-view';
+import HomeView from './home-view';
+import PlayerView from './Components/login-view';
 import LeaderBoard from './Components/leader-board';
+import Navbar from './Components/navbar';
 import Test from './Components/test';
+import './_Styles/routes.scss';
 
+
+const StyleLink = {
+    color: 'white',
+    textDecoration: 'none',
+
+}
 const KoalaRoutes = () => (
     <BrowserRouter>
         <div>
-          <ul>
-            <li>
-                <Link to="/">Login</Link>
-            </li>
-            <li>
-                <Link to="/leaderboard">LeaderBoard</Link>
-            </li>
-            <li>
-                <Link to="/test">Test </Link>
-            </li>
-          </ul>
+          <Navbar />
           <Switch>
-          <Route exact path="/" component={LoginView} />
+          <Route exact path="/" component={HomeView} />
           <Route path="/leaderboard" component={LeaderBoard} />
-          <Route path="/test" component={Test} />
           <Route component={NoMatch} />
           </Switch>
 

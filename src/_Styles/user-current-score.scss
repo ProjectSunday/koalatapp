@@ -1,4 +1,7 @@
-.leader-board-box {
+.user-score-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: white;
 
     margin: auto;
@@ -7,34 +10,30 @@
     .title {
         display: flex;
         height: 100px;
+        width: 100%;
         color: white;
+        text-align: center;
         border-radius: 5px 5px 0 0;
         background-color: #222;
 
         h1 {
-         flex-basis: 80%;
+         flex-basis: 70%;
          font-size: 50px;
          margin: auto;
 
         }
 
         img {
-           flex-basis: 20%; 
+           flex-basis: 30%; 
         }
-
     }
 
-    .board-row {
-        height: 50px;
-        width: 100%;
-        text-align: center;
-        line-height: 50px;
+    .content-box {
+        margin: auto;  
     }
 
-    .board-row:nth-child(2n) {
-        background-color: #eee;
-    }
-
-    
-
+      div h3 {
+          text-align: center;
+          font-size: 40px;
+      }
 }

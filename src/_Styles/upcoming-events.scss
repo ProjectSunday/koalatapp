@@ -1,10 +1,10 @@
-.leader-board-box {
+.events-box {
     background-color: white;
 
     margin: auto;
     border-radius: 5px 5px 0 0;
 
-    .title {
+    .events-title {
         display: flex;
         height: 100px;
         color: white;
@@ -12,29 +12,14 @@
         background-color: #222;
 
         h1 {
-         flex-basis: 80%;
          font-size: 50px;
          margin: auto;
 
         }
-
-        img {
-           flex-basis: 20%; 
-        }
-
     }
 
-    .board-row {
-        height: 50px;
-        width: 100%;
+    .events-row {
         text-align: center;
-        line-height: 50px;
+        margin: auto;
     }
-
-    .board-row:nth-child(2n) {
-        background-color: #eee;
-    }
-
-    
-
 }
