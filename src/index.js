@@ -4,9 +4,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import KoalaRoutes from './routes';
 import "./_Styles/Index.scss";
-import LeaderBoard from './Components/leader-board';
-import LoginView from "./Components/login-view";
-import Test from './Components/test';
+import HomeView from './home-view';
 
 //import KoalaTApi from './Actions/koalat-api';
 
@@ -26,12 +24,7 @@ import Test from './Components/test';
 class App extends React.Component {
     render() {
         return (
-            <div>
               <KoalaRoutes />
-              {/* <LeaderBoard />
-              <LoginView />   */}
-              {/* <Test /> */}
-            </div>
         )
     }
 }

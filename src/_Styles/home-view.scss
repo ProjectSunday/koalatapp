@@ -1,0 +1,29 @@
+.home-view-container {
+  height: 100%;
+  width: 100%;
+  
+    .home-view-nav {
+        width: 100%;
+    }
+
+    .home-view-content {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: space-between;
+
+      .left {
+          flex-basis: 20%;
+      }
+
+      .center {
+          flex-basis: 50%;
+      }
+
+      .right {
+          flex-basis: 20%;
+      }
+
+    }
+
+}

@@ -12,6 +12,7 @@ class PlayerView extends React.Component {
           
           <div className="user-info-box">
           <input type="text" placeholder="Player ID"></input>
+          <input type="password" placeholder="Password"></input>
           <button> Log In </button>
           </div>
 
