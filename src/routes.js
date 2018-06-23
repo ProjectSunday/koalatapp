@@ -6,8 +6,9 @@ import LeaderBoard from './Components/leader-board';
 import Navbar from './Components/navbar';
 import UserProfile from './Components/user-profile';
 import Test from './Components/test';
-import './_Styles/routes.scss';
+import UserSignup from './Components/UserSignup/UserSignup';
 
+import './_Styles/routes.scss';
 
 const StyleLink = {
     color: 'white',
@@ -21,6 +22,10 @@ const KoalaRoutes = () => (
           <Switch>
           <Route exact path="/" component={HomeView} />
           <Route path="/userprofile" component={UserProfile} />
+          {/* <Route exact path="/" component={LoginView} /> */}
+          <Route path="/leaderboard" component={LeaderBoard} />
+          <Route path="/signup" component={UserSignup} />
+          <Route path="/test" component={Test} />
           <Route component={NoMatch} />
           </Switch>
 
