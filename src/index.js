@@ -13,6 +13,7 @@ import KoalaRoutes from './routes';
 import "./_Styles/Index.scss";
 import HomeView from './home-view'
 import UserSignup from './Components/UserSignup/UserSignup';
+import Venues from './Components/venues';
 
 
 import store from './Store';
@@ -40,7 +41,8 @@ class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <KoalaRoutes />
+                {/* <KoalaRoutes /> */}
+                <Venues />
             </Provider>
         )
     }
@@ -54,5 +56,7 @@ const federated = {
     // amazon_client_id: ''
 }
 
-ReactDOM.render(<AppWithAuth federated={federated} />, 
-    document.getElementById("app") );
+// ReactDOM.render(<AppWithAuth federated={federated} />, 
+//     document.getElementById("app") );
+
+ReactDOM.render(<App />, document.getElementById("app"));

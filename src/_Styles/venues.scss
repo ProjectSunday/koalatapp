@@ -1,0 +1,40 @@
+.venues-container {
+    background-color: white;
+    margin: auto;
+    border-radius: 5px 5px 0 0;
+
+    .title {
+        display: flex;
+        height: 100px;
+        color: white;
+        border-radius: 5px 5px 0 0;
+        background-color: #222;
+
+        h1 {
+          font-size: 2.0em;
+          margin: auto;
+
+        }
+    }
+
+    .upcoming-events {
+        
+        .venue-row {
+                text-align: center;
+                font-size: 1.5em;
+                background: #bbb;
+            }
+    }
+
+    .past-events {
+
+        .venue-row {
+            text-align: center;
+            font-size: 1.5em;
+            background: #bbb;
+        }
+    }
+    
+
+    
+}
