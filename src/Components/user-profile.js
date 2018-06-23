@@ -11,6 +11,7 @@ class UserProfile extends React.Component {
             email: "jamesboyer@boyer.com",
             city: "indianapolis",
             ID: 123,
+            points: 24,
         }
         
         return (
@@ -21,6 +22,7 @@ class UserProfile extends React.Component {
                     <h4>Email: {user.email}</h4>
                     <h4>City: {user.city}</h4>
                     <h4>Member ID: {user.ID}</h4>
+                    <h4>Points: {user.points}</h4>
                     
                 </div>
             </div>
