@@ -4,7 +4,7 @@
 	"region": "us-east-2",
 	"state": "NORMAL",
 	"createdDate": "2018-06-22T19:21:03.793Z",
-	"lastUpdatedDate": "2018-06-23T16:51:23.013Z",
+	"lastUpdatedDate": "2018-06-23T19:12:30.884Z",
 	"consoleUrl": "https://console.aws.amazon.com/mobilehub/home#/b630afa9-eac4-4ab7-a933-8c238bb633fa/build",
 	"resources": [
 		{
@@ -22,8 +22,19 @@
 			"arn": null,
 			"feature": "analytics",
 			"attributes": {
+				"authType": "authenticated",
+				"lastUpdateRequestID": "5dd7f8df-95b2-420c-a66e-fbf7c1aa4b9d",
+				"role": "koalatappawsmobile_auth_MOBILEHUB_1614086192"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "koalatappawsmobile_mobileanalytics_MOBILEHUB_1614086192",
+			"arn": null,
+			"feature": "analytics",
+			"attributes": {
 				"authType": "unauthenticated",
-				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62",
+				"lastUpdateRequestID": "5dd7f8df-95b2-420c-a66e-fbf7c1aa4b9d",
 				"role": "koalatappawsmobile_unauth_MOBILEHUB_1614086192"
 			}
 		},
@@ -33,9 +44,46 @@
 			"arn": "us-east-2:1036471a-3ea5-4750-b759-f19af515a56e",
 			"feature": "user-signin",
 			"attributes": {
-				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62",
+				"lastUpdateRequestID": "5dd7f8df-95b2-420c-a66e-fbf7c1aa4b9d",
 				"poolid": "us-east-2:1036471a-3ea5-4750-b759-f19af515a56e",
-				"roleARNs": "arn:aws:iam::741802651910:role/koalatappawsmobile_unauth_MOBILEHUB_1614086192"
+				"roleARNs": "arn:aws:iam::741802651910:role/koalatappawsmobile_auth_MOBILEHUB_1614086192,arn:aws:iam::741802651910:role/koalatappawsmobile_unauth_MOBILEHUB_1614086192"
+			}
+		},
+		{
+			"type": "AWS::IAM::Role",
+			"name": "koalatappawsmobile_smsverification_MOBILEHUB_1614086192",
+			"arn": "arn:aws:iam::741802651910:role/service-role/koalatappawsmobile_smsverification_MOBILEHUB_1614086192",
+			"feature": "user-signin",
+			"attributes": {
+				"lastUpdateRequestID": "5dd7f8df-95b2-420c-a66e-fbf7c1aa4b9d",
+				"user-pools-role-key": "user-pools-execution-role"
+			}
+		},
+		{
+			"type": "AWS::Cognito::UserPool",
+			"name": "koalatappawsmobile_userpool_MOBILEHUB_1614086192",
+			"arn": "us-east-2_k3iNSPOJi",
+			"feature": "user-signin",
+			"attributes": {
+				"alias-attributes": "[\"email\",\"phone_number\"]",
+				"lastUpdateRequestID": "5dd7f8df-95b2-420c-a66e-fbf7c1aa4b9d",
+				"mfa-configuration": "ON",
+				"password-policy": "{\"minimumLength\":8,\"requireUppercase\":true,\"requireLowercase\":true,\"requireNumbers\":true,\"requireSymbols\":true}",
+				"region": "us-east-2",
+				"user-pools-client-id": "...redacted_-1426000398...",
+				"user-pools-client-secret": "...redacted_-53333982...",
+				"user-pools-id": "us-east-2_k3iNSPOJi",
+				"user-pools-web-client-id": "30ffloo70g3v5tju36ttue8bqk"
+			}
+		},
+		{
+			"type": "AWS::IAM::Role",
+			"name": "koalatappawsmobile_auth_MOBILEHUB_1614086192",
+			"arn": "arn:aws:iam::741802651910:role/koalatappawsmobile_auth_MOBILEHUB_1614086192",
+			"feature": "user-signin",
+			"attributes": {
+				"authType": "authenticated",
+				"lastUpdateRequestID": "5dd7f8df-95b2-420c-a66e-fbf7c1aa4b9d"
 			}
 		},
 		{
@@ -76,8 +124,19 @@
 			"arn": null,
 			"feature": "hosting",
 			"attributes": {
+				"authType": "authenticated",
+				"lastUpdateRequestID": "5dd7f8df-95b2-420c-a66e-fbf7c1aa4b9d",
+				"role": "koalatappawsmobile_auth_MOBILEHUB_1614086192"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "koalatappawsmobile_hosting_MOBILEHUB_1614086192",
+			"arn": null,
+			"feature": "hosting",
+			"attributes": {
 				"authType": "unauthenticated",
-				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62",
+				"lastUpdateRequestID": "5dd7f8df-95b2-420c-a66e-fbf7c1aa4b9d",
 				"role": "koalatappawsmobile_unauth_MOBILEHUB_1614086192"
 			}
 		},
