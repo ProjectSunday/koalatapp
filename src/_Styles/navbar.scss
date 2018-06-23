@@ -5,10 +5,11 @@
     
     ul {
         display: flex;
-        justify-content: center;
+        list-style: none;
+        padding: 0px;
 
         li {
-            list-style: none;
+           list-style: none;
             margin: auto;
             font-size: 25px;
             line-height: 50px;
@@ -21,7 +22,6 @@
                 &:hover {
                     opacity: 1;
                 }
-
             }
         }
     
