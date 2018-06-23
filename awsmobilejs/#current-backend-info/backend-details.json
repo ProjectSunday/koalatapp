@@ -1,0 +1,106 @@
+{
+	"name": "koalatapp-awsmobile",
+	"projectId": "b630afa9-eac4-4ab7-a933-8c238bb633fa",
+	"region": "us-east-2",
+	"state": "NORMAL",
+	"createdDate": "2018-06-22T19:21:03.793Z",
+	"lastUpdatedDate": "2018-06-22T19:21:08.428Z",
+	"consoleUrl": "https://console.aws.amazon.com/mobilehub/home#/b630afa9-eac4-4ab7-a933-8c238bb633fa/build",
+	"resources": [
+		{
+			"type": "AWS::Pinpoint::AnalyticsApplication",
+			"name": "koalatappawsmobile_MobileHub",
+			"arn": "c4f51b385aac4cd686835786db502ab8",
+			"feature": "analytics",
+			"attributes": {
+				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "koalatappawsmobile_mobileanalytics_MOBILEHUB_1614086192",
+			"arn": null,
+			"feature": "analytics",
+			"attributes": {
+				"authType": "unauthenticated",
+				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62",
+				"role": "koalatappawsmobile_unauth_MOBILEHUB_1614086192"
+			}
+		},
+		{
+			"type": "AWS::Cognito::IdentityPool",
+			"name": "koalatappawsmobile_MOBILEHUB_1614086192",
+			"arn": "us-east-2:1036471a-3ea5-4750-b759-f19af515a56e",
+			"feature": "user-signin",
+			"attributes": {
+				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62",
+				"poolid": "us-east-2:1036471a-3ea5-4750-b759-f19af515a56e",
+				"roleARNs": "arn:aws:iam::741802651910:role/koalatappawsmobile_unauth_MOBILEHUB_1614086192"
+			}
+		},
+		{
+			"type": "AWS::IAM::Role",
+			"name": "koalatappawsmobile_unauth_MOBILEHUB_1614086192",
+			"arn": "arn:aws:iam::741802651910:role/koalatappawsmobile_unauth_MOBILEHUB_1614086192",
+			"feature": "user-signin",
+			"attributes": {
+				"authType": "unauthenticated",
+				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62"
+			}
+		},
+		{
+			"type": "AWS::S3::Bucket",
+			"name": "koalatappawsmobile-hosting-mobilehub-1614086192",
+			"arn": null,
+			"feature": "hosting",
+			"attributes": {
+				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62",
+				"region": "us-east-2",
+				"s3-bucket-console-url": "https://s3.console.aws.amazon.com/s3/buckets/koalatappawsmobile-hosting-mobilehub-1614086192",
+				"s3-bucket-website-url": "https://s3.amazonaws.com/koalatappawsmobile-hosting-mobilehub-1614086192"
+			}
+		},
+		{
+			"type": "AWS::CloudFront::Distribution",
+			"name": "d7m81dor9r4ls.cloudfront.net",
+			"arn": null,
+			"feature": "hosting",
+			"attributes": {
+				"id": "E3JZI7ZAYX7XF",
+				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62"
+			}
+		},
+		{
+			"type": "AWS::IAM::Policy",
+			"name": "koalatappawsmobile_hosting_MOBILEHUB_1614086192",
+			"arn": null,
+			"feature": "hosting",
+			"attributes": {
+				"authType": "unauthenticated",
+				"lastUpdateRequestID": "d65f6f95-e3ec-46f4-a954-0b7b62829a62",
+				"role": "koalatappawsmobile_unauth_MOBILEHUB_1614086192"
+			}
+		},
+		{
+			"type": "AWS::S3::Bucket",
+			"name": "koalatappawsmobile-deployments-mobilehub-1614086192",
+			"arn": null,
+			"feature": "common",
+			"attributes": {
+				"region": "us-east-2",
+				"s3-bucket-console-url": "https://s3.console.aws.amazon.com/s3/buckets/koalatappawsmobile-deployments-mobilehub-1614086192"
+			}
+		},
+		{
+			"type": "AWS::CloudFormation::Stack",
+			"name": "Development",
+			"arn": null,
+			"feature": "cloud-api",
+			"attributes": {
+				"primary": "true",
+				"region": "us-east-2",
+				"stateSummary": "NOT_YET_DEPLOYED"
+			}
+		}
+	]
+}
