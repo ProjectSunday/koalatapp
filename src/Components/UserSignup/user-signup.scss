@@ -1,1 +1,21 @@
-.blah {}
+.user-signup-container {
+  width: 500px;
+  height: 700px;
+  background-color: white;
+  margin: auto;
+    
+  form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            width: 70%;
+            float: right;
+         }
+
+         .submit-btn {
+             width: 100%;
+         }
+    }
+
+}

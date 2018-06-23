@@ -14,7 +14,7 @@ class CurrentScore extends React.Component {
         return (
             <div className="user-score-container">
               <div className="title"> 
-                <h1>  CurrentScore </h1> 
+                <h1>  Current Score </h1> 
                 </div>
 
                 <div className="content-box">
