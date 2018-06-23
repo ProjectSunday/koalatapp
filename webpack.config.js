@@ -20,6 +20,13 @@ module.exports = {
             template: 'src/index.html'
         })
     ],
+    resolve: {
+        alias: {
+            Components: resolve(__dirname, 'src/Components'),
+            src: resolve(__dirname, 'src'),
+            _Styles: resolve(__dirname, 'src/_Styles')
+        }
+    },
     devServer: {
         historyApiFallback: true,
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './logo';
 import LeaderBoard from './leader-board';
-import '../_Styles/login-view.scss';
+import '_Styles/login-view.scss';
 
 class PlayerView extends React.Component {
     render() {

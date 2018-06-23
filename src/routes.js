@@ -6,7 +6,8 @@ import LeaderBoard from './Components/leader-board';
 import Navbar from './Components/navbar';
 import UserProfile from './Components/user-profile';
 import Test from './Components/test';
-import UserSignup from './Components/UserSignup/UserSignup';
+
+import UserSignup from 'Components/UserSignup/UserSignup';
 
 import './_Styles/routes.scss';
 
