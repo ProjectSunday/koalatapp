@@ -12,6 +12,7 @@ class UserProfile extends React.Component {
             city: "indianapolis",
             ID: 123,
         }
+        
         return (
             <div className="user-profile-container">
                 <div className="user-content">
