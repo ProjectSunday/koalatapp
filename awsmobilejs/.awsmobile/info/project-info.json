@@ -1,0 +1,19 @@
+{
+	"ProjectName": "koalatapp",
+	"ProjectPath": "/Users/hai/projects/koalatapp",
+	"InitializationTime": "2018-06-22-15-22-06",
+	"LastConfigurationTime": "2018-06-22-15-20-45",
+	"LastNPMInstallTime": "",
+	"FrontendLastBuildTime": "",
+	"LastPublishTime": "",
+	"BackendLastSyncTime": "2018-06-22-15-38-50",
+	"BackendLastBuildTime": "",
+	"BackendLastPushTime": "",
+	"BackendProjectID": "b630afa9-eac4-4ab7-a933-8c238bb633fa",
+	"BackendProjectName": "koalatapp-awsmobile",
+	"BackendProjectConsoleUrl": "https://console.aws.amazon.com/mobilehub/home#/b630afa9-eac4-4ab7-a933-8c238bb633fa/build",
+	"BackendProjectCreationTime": "2018-06-22T19:21:03.793Z",
+	"BackendProjectLastUpdatedTime": "2018-06-22T19:21:08.428Z",
+	"Framework": "react",
+	"BackendLastSyncToDevTime": "2018-06-22-15-39-02"
+}
