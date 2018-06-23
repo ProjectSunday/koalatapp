@@ -10,7 +10,7 @@ class LeaderBoard extends React.Component {
 
         return(
             <div className="leader-board-box">
-              <div className="title"> <img src={Svg} /> <h1>{title}  Leader Board</h1> </div>
+              <div className="title"> <img src={Svg} /> <h1>{title} Leader Board</h1> </div>
               <div className="board-row">
                 {info}
               </div>

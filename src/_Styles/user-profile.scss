@@ -3,6 +3,10 @@
     height: 500px;
     margin: auto;
 
+    @media screen and (max-width: 600px) {
+        width: 90%;
+        }
+
 
     .user-content {
         margin-top: 20px;
@@ -12,6 +16,12 @@
         background-color: white;
         flex-basis: 50%;
         border-radius: 10px 10px 0px 0px;
+
+        @media screen and (max-width:600px) {
+            flex-basis: 90%
+        }
+
+        
 
         img {
             height: 100px;

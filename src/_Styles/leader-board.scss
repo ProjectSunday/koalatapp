@@ -1,12 +1,11 @@
 .leader-board-box {
     background-color: white;
-
     margin: auto;
     border-radius: 5px 5px 0 0;
 
     .title {
         display: flex;
-        height: 100px;
+        height: 25%;
         color: white;
         border-radius: 5px 5px 0 0;
         background-color: #222;
@@ -15,10 +14,13 @@
          font-size: 2.0em;
          margin: auto;
 
+
         }
 
         img {
-           flex-basis: 20%; 
+            height: auto;
+            width: auto;
+            position: relative;
         }
 
     }
