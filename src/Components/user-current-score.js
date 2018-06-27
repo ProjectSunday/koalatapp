@@ -17,10 +17,15 @@ class CurrentScore extends React.Component {
                 <h1>  Current Score </h1> 
                 </div>
 
+                <div className="outer-box">
+
                 <div className="content-box">
                    <h3> Welome {user.name} </h3>
                    <h3>Your current score is {score} points </h3>
                 </div>
+
+                </div>
+                
             </div>
         )
     }

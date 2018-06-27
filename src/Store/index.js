@@ -1,4 +1,4 @@
-function test1(state = { test: 'this is a test aaaa' }, action) {
+function testReducer(state = { test: 'this is a test aaaa' }, action) {
     switch(action.type) {
         case 'TEST_1':
           return {
@@ -10,7 +10,7 @@ function test1(state = { test: 'this is a test aaaa' }, action) {
 }
 
 import { combineReducers, createStore } from 'redux';
-const reducer = combineReducers({ testing: test1 });
+const reducer = combineReducers({ testing: testReducer });
 const store = createStore(
     reducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
