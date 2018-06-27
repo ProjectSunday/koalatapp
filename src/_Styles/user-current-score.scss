@@ -15,6 +15,7 @@
         text-align: center;
         border-radius: 5px 5px 0 0;
         background-color: #222;
+        box-shadow: 0px 5px 25px 0px black;
 
         h1 {
          flex-basis: 70%;
@@ -28,12 +29,19 @@
         }
     }
 
-    .content-box {
+
+    .outer-box {
+       box-shadow: 0px 5px 5px 3px rgba(0,0,0,0.21);
+
+      .content-box {
         margin: auto;  
     }
 
       div h3 {
           text-align: center;
           font-size: 40px;
-      }
+      } 
+    
+    }
+    
 }

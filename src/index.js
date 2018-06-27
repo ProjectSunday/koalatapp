@@ -41,8 +41,8 @@ class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                {/* <KoalaRoutes /> */}
-                <Venues />
+                <KoalaRoutes />
+                {/* <Venues /> */}
             </Provider>
         )
     }
