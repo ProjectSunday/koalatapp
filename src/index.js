@@ -48,7 +48,7 @@ class App extends React.Component {
     }
 }
 
-const AppWithAuth = withAuthenticator(App);
+// const AppWithAuth = withAuthenticator(App);
 
 const federated = {
     google_client_id: '191304805062-d0rck99u7ej5j0329q0e9gvsa5tj4a4t.apps.googleusercontent.com',
@@ -57,6 +57,5 @@ const federated = {
 }
 
 // ReactDOM.render(<AppWithAuth federated={federated} />, 
-//     document.getElementById("app") );
 
 ReactDOM.render(<App />, document.getElementById("app"));

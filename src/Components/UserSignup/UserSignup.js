@@ -14,18 +14,38 @@ import './user-signup.scss';
 //     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 // }
 
+import { Auth } from 'aws-amplify';
+
 window.googleInit = function () {
-    console.log('googleinit')
-    // gapi.load('auth2', function() { // Ready.
+    // gapi.load('auth2', function() {
+    //     gapi.auth2.init({
+    //         client_id: '191304805062-d0rck99u7ej5j0329q0e9gvsa5tj4a4t.apps.googleusercontent.com'
+    //     })
+
+    //     const gAuth = window.gapi.auth2.getAuthInstance();
+    //     gAuth.signIn().then(gUser => {
+    //         const { id_token, expires_at } = gUser.getAuthResponse();
+    //         const profile = gUser.getBasicProfile();
+    //         const user = {
+    //             email: profile.getEmail(),
+    //             name: profile.getName()
+    //         }
+    //         // console.log('yooo', gUser.getBasicProfile())
+    //         Auth.federatedSignIn(
+    //             'google',
+    //             {
+    //                 token: id_token,
+    //                 expires_at
+    //             },
+    //             user
+    //         ).then((cred) => {
+    //             console.log('aws cred', cred)
+    //         })
+    //     })
+
     //  });
 
-    gapi.auth2.init({
-        client_id: '191304805062-d0rck99u7ej5j0329q0e9gvsa5tj4a4t.apps.googleusercontent.com'
-    })
-    const ga = window.gapi.auth2.getAuthInstance();
-    ga.signIn().then(yo => {
-        console.log('yooo', yo)
-    })
+
 }
 
 
@@ -91,6 +111,45 @@ function signinCallback(authResult) {
 */
 
 class UserSignup extends React.Component {
+    constructor() {
+        super();
+        const script = document.createElement('script');
+
+        // <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+        script.src = "https://apis.google.com/js/platform.js?onload=googleInit"
+        script.defer = true;
+        script.async = true;
+        document.head.appendChild(script);
+    }
+    signInClicked() {
+        gapi.load('auth2', function() {
+            gapi.auth2.init({
+                client_id: '191304805062-d0rck99u7ej5j0329q0e9gvsa5tj4a4t.apps.googleusercontent.com'
+            })
+    
+            const gAuth = window.gapi.auth2.getAuthInstance();
+            gAuth.signIn().then(gUser => {
+                const { id_token, expires_at } = gUser.getAuthResponse();
+                const profile = gUser.getBasicProfile();
+                const user = {
+                    email: profile.getEmail(),
+                    name: profile.getName()
+                }
+                // console.log('yooo', gUser.getBasicProfile())
+                Auth.federatedSignIn(
+                    'google',
+                    {
+                        token: id_token,
+                        expires_at
+                    },
+                    user
+                ).then((cred) => {
+                    console.log('aws cred', cred)
+                })
+            })
+    
+        });
+    }
     render() {
         return (
             <div>
@@ -105,9 +164,12 @@ class UserSignup extends React.Component {
                         <input className="submit-btn" type="submit" value="submit" />
                     </form>
                     </div>
-                <div className="signup">
+                */}
+                {/* <div className="signup">
                     <div className="g-signin2" data-onsuccess="onSignIn"></div>
                 </div> */}
+
+                <button onClick={this.signInClicked}>signin</button>
             </div>
 
         );
