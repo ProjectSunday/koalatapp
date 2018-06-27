@@ -22,7 +22,9 @@ module.exports = {
     ],
     resolve: {
         alias: {
+            Actions: resolve(__dirname, 'src/Actions'),
             Components: resolve(__dirname, 'src/Components'),
+            Store: resolve(__dirname, 'src/Store'),
             src: resolve(__dirname, 'src'),
             _Styles: resolve(__dirname, 'src/_Styles')
         }

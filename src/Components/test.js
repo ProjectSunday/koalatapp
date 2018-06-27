@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 
+import { setTest } from 'Actions/test-actions';
+
+
 class Test extends React.Component {
     constructor(props) {
         super(props);
@@ -11,9 +14,8 @@ class Test extends React.Component {
 
     }
     onClick = () => {
-        
-        const val = this.textBox.current.value
-        console.log('click', val)
+        const val = this.textBox.current.value;
+        setTest(val)
 
     }
     render() {
@@ -28,6 +30,7 @@ class Test extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log('mapStatetoprops executing...')
     return {
         test: state.testing.test
     }
