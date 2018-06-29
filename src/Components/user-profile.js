@@ -3,7 +3,30 @@ import '../_Styles/user-profile.scss';
 import James from '../_Styles/Imgs/James.jpg';
 
 class UserProfile extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isEditing: false
+        }
+
+        this.toggleEdit = this.toggleEdit.bind(this);
+    }
+
+    toggleEdit() {
+        this.setState({isEditing: !this.state.isEditing});
+    }
+
     render () {
+
+        if(this.state.isEditing) {
+            return (
+                <div>
+                  <h1>EDIT SCREEN!</h1>
+                  <button onClick={this.toggleEdit}>Done Editing </button>
+                </div>
+            )
+        }
         const user = {
             firstName: "James",
             lastName: "Boyer",
@@ -23,6 +46,7 @@ class UserProfile extends React.Component {
                     <h4>City: {user.city}</h4>
                     <h4>Member ID: {user.ID}</h4>
                     <h4>Points: {user.points}</h4>
+                    <button onClick={this.toggleEdit}>Edit</button>
                     
                 </div>
             </div>
