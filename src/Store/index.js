@@ -1,3 +1,5 @@
+import James from '../_Styles/Imgs/James.jpg';
+
 function testReducer(state = { test: 'this is a test aaaa' }, action) {
     switch(action.type) {
         case 'TEST_1':
@@ -13,20 +15,31 @@ function testReducer(state = { test: 'this is a test aaaa' }, action) {
     }
 }
 
-function userReducer(state = { BLAH: 'blah' }, action) {
+function userReducer(state = { 
+    user: {
+            firstName: "James",
+            lastName: "Boyer",
+            img: {James},
+            email: "jamesboyer@boyer.com",
+            city: "indianapolis",
+            ID: 123,
+            points: 24,
+    }
+ }, action) {
     switch(action.type) {
-        case 'USER1':
-          return {
-              test: action.testValue
-          }
-        case 'USER2':
-          return {
-              test: state.test + action.value
-          }
+        case 'UPDATE_USER':
+              var newUser = {
+                  user: action.user,
+              }
+              var newState = Object.assign({}, ...state, newUser);
+
+              return newState;
+        
         default:
           return state;
     }
 }
+
 
 
 import { combineReducers, createStore } from 'redux';
