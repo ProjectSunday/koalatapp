@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import { setTest } from 'Actions/test-actions';
 
-
 class Test extends React.Component {
     constructor(props) {
         super(props);
@@ -11,29 +10,29 @@ class Test extends React.Component {
         //     value: ''
         // }
         this.textBox = React.createRef();
-
     }
+
     onClick = () => {
         const val = this.textBox.current.value;
-        setTest(val)
-
+        setTest(val);
     }
+
     render() {
         return (
             <Fragment>
                 <div>{this.props.test}</div>
-                <input type="text" ref={this.textBox}></input>
+                <input type="text" ref={this.textBox} />
                 <button onClick={this.onClick}>clicks me</button>
             </Fragment>
-        )   
+        );
     }
 }
 
 const mapStateToProps = (state) => {
-    console.log('mapStatetoprops executing...')
+    console.log('mapStatetoprops executing...');
     return {
-        test: state.testing.test
-    }
-}
+        test: state.testing.test,
+    };
+};
 
-export default connect(mapStateToProps)(Test)
+export default connect(mapStateToProps)(Test);
