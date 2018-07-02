@@ -1,55 +1,54 @@
+import { combineReducers, createStore } from 'redux';
 import James from '../_Styles/Imgs/James.jpg';
 
+
 function testReducer(state = { test: 'this is a test aaaa' }, action) {
-    switch(action.type) {
-        case 'TEST_1':
-          return {
-              test: action.testValue
-          }
-        case 'SET_TEST_VALUE':
-          return {
-              test: state.test + action.value
-          }
-        default:
-          return state;
+    switch (action.type) {
+    case 'TEST_1':
+        return {
+            test: action.testValue,
+        };
+    case 'SET_TEST_VALUE':
+        return {
+            test: state.test + action.value,
+        };
+    default:
+        return state;
     }
 }
 
-function userReducer(state = { 
+function userReducer(state = {
     user: {
-            firstName: "James",
-            lastName: "Boyer",
-            img: {James},
-            email: "jamesboyer@boyer.com",
-            city: "indianapolis",
-            ID: 123,
-            points: 24,
-    }
- }, action) {
-    switch(action.type) {
-        case 'UPDATE_USER':
-              var newUser = {
-                  user: action.user,
-              }
-              var newState = Object.assign({}, ...state, newUser);
+        firstName: 'James',
+        lastName: 'Boyer',
+        img: { James },
+        email: 'jamesboyer@boyer.com',
+        city: 'indianapolis',
+        ID: 123,
+        points: 24,
+    },
+}, action) {
+    switch (action.type) {
+    case 'UPDATE_USER':
+        var newUser = {
+            user: action.user,
+        };
+        var newState = Object.assign({}, ...state, newUser);
 
-              return newState;
-        
-        default:
-          return state;
+        return newState;
+
+    default:
+        return state;
     }
 }
 
-
-
-import { combineReducers, createStore } from 'redux';
 const reducer = combineReducers({
     testing: testReducer,
-    user: userReducer
+    user: userReducer,
 });
 const store = createStore(
     reducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
 

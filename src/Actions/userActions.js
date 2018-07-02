@@ -1,12 +1,10 @@
 import store from 'Store';
 
 export const updateUser = (user) => {
-    
-    var action = {
+    const action = {
         type: 'UPDATE_USER',
-        user: user,
-    }
+        user,
+    };
 
-    store.dispatch(action)
-}
-
+    store.dispatch(action);
+};

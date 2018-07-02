@@ -12,20 +12,20 @@ class Test extends React.Component {
         this.textBox = React.createRef();
     }
 
-    onClick = () => {
-        const val = this.textBox.current.value;
-        setTest(val);
-    }
+       onClick = () => {
+           const val = this.textBox.current.value;
+           setTest(val);
+       }
 
-    render() {
-        return (
-            <Fragment>
-                <div>{this.props.test}</div>
-                <input type="text" ref={this.textBox} />
-                <button onClick={this.onClick}>clicks me</button>
-            </Fragment>
-        );
-    }
+       render() {
+           return (
+               <Fragment>
+                   <div>{this.props.test}</div>
+                   <input type="text" ref={this.textBox} />
+                   <button onClick={this.onClick}>clicks me</button>
+               </Fragment>
+           );
+       }
 }
 
 const mapStateToProps = (state) => {
