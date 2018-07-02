@@ -11,6 +11,8 @@ module.exports = {
         "react/button-has-type": "off",
         "react/jsx-one-expression-per-line": 0,
         "react/prefer-stateless-function": 0,
+        "react/no-access-state-in-setstate": 0,
+        "react/jsx-indent-props": [1, 4],
         "indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
         // "object-curly-newline": "never",
