@@ -1,5 +1,5 @@
 import { combineReducers, createStore } from 'redux';
-import James from '../_Styles/Imgs/James.jpg';
+import James from '../_Styles/Imgs/james.jpg';
 
 
 function testReducer(state = { test: 'this is a test aaaa' }, action) {
@@ -26,6 +26,7 @@ function userReducer(state = {
         city: 'indianapolis',
         ID: 123,
         points: 24,
+        role: ['director'],
     },
 }, action) {
     switch (action.type) {
