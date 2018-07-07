@@ -5,6 +5,7 @@ import James from '_Styles/Imgs/james.jpg';
 import { updateUser } from '../Actions/userActions';
 import UserForm from './user-form';
 
+
 class UserProfile extends React.Component {
     constructor(props, context) {
         super(props, context);
@@ -90,6 +91,7 @@ const mapStateToProps = (state) => {
         city: '',
         ID: '',
         points: '',
+        role: '',
     };
 
     return {
