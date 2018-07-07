@@ -1,7 +1,5 @@
 import React from 'react';
 import './_Styles/home-view.scss';
-
-// import Navbar from './Components/navbar';
 import LeaderBoard from './Components/leader-board';
 import CurrentScore from './Components/user-current-score';
 import UpcomingEvents from './Components/upcomingevents';

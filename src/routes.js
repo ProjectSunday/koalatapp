@@ -1,29 +1,34 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import UserSignup from 'Components/UserSignup/UserSignup';
 import HomeView from './home-view';
-// import PlayerView from './Components/login-view';
-import LeaderBoard from './Components/leader-board';
 import Navbar from './Components/navbar';
 import UserProfile from './Components/user-profile';
-import Test from './Components/test';
+import AuthWrapper from './Components/AuthWrapper';
+import DirectorView from './Components/director-view';
+import LoginView from './Components/login-view';
+import DashBoard from './Components/director-dash';
+import LeaderBoard from './Components/leader-board';
 
 import './_Styles/routes.scss';
+import DirectorProfile from './Components/director-profile';
+
 
 const KoalaRoutes = () => (
     <BrowserRouter>
         <div className="routes-box">
             <Navbar />
             <Switch>
-                <Route exact path="/" component={HomeView} />
-                <Route path="/userprofile" component={UserProfile} />
-                {/* <Route exact path="/" component={LoginView} /> */}
+                <Route exact path="/" component={AuthWrapper} />
+                <Route path="/UserHome" component={HomeView} />
+                <Route path="/DirectorView" component={DirectorView} />
+                <Route exact path="/login" component={LoginView} />
+                <Route path="/Dashboard" component={DashBoard} />
                 <Route path="/leaderboard" component={LeaderBoard} />
-                <Route path="/signup" component={UserSignup} />
-                <Route path="/test" component={Test} />
+                {/* <Route path="/signup" component={UserSignup} /> */}
+                <Route path="/UserProfile" component={UserProfile} />
+                <Route path="/DirectorProfile" component={DirectorProfile} />
                 <Route component={NoMatch} />
             </Switch>
-
         </div>
     </BrowserRouter>
 );
