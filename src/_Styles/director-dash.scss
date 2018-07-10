@@ -1,0 +1,100 @@
+$Chon: 'Chonburi', cursive;
+
+.dash-container {
+    margin: auto;
+    width: 60%;
+
+
+    .dash-content {
+        height: 500px;
+
+        .user-list {
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 90%;
+            height: 100%;
+            box-shadow: inset 0 0 10px #000000;
+            background-color: rgb(231, 212, 180);
+            
+
+            .list-title {
+                display: flex;
+                border-bottom: 1px solid black;
+                justify-content: space-around;
+                background-color: #2B373E;
+                border-radius: 20px 20px 0px 0px;
+                margin-bottom: 20px;
+                font-family: $Chon;
+
+                h1 {
+                    margin-left: 20px;
+                    flex-basis: 60%;
+                    color: white;
+                    letter-spacing: 3px;
+                    font-size: 2.0em;
+                }
+
+                .right-side {
+                    margin: auto;
+                    display: flex;
+
+                    input {
+                        flex-basis: 30%;
+                        height: 30px;
+                        margin-right: 5px;
+                        border-radius: 20px;
+                        border: none;
+                        font-size: 12px;
+                    
+                        &:focus {
+                            box-shadow: inset 0 0 10px black;
+                            outline: none;
+                            padding: 3px;
+                            
+                        }
+                    }  
+
+                    .btn {
+                        border-radius: 15px;
+                        outline: none;
+                    }
+                }              
+            }
+        }
+
+        .content-box {
+            margin: auto;
+            height: 70%;
+            width: 90%;
+            background-color: white;
+            box-shadow: 0px 10px 28px -10px rgba(0,0,0,0.75);
+            border-radius: 0px 20px 0px 0px;
+
+
+            .board-row {
+                margin: auto;
+                text-align: center;
+                height: 20%;
+                width: 100%;
+                line-height: 50px;
+                background-color: #7FB9A9;
+                opacity: .6;
+            }
+
+            .board-row1 {
+                margin: auto;
+                text-align: center;
+                height: 20%;
+                width: 100%;
+                line-height: 50px;
+                background-color: #7FB9A9;
+                opacity: .6;
+                border-radius: 0px 20px 0px 0px;
+            }
+    
+            .board-row:nth-child(2n) {
+                background-color: #6E7871;
+            }
+        }
+    }
+ }

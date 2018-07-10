@@ -1,14 +1,20 @@
+$dark-grey: #2B373E;
+$blue: #7FB9A9;
+
+
 .venues-container {
-    background-color: white;
+    background-color: $blue;
     margin: auto;
     border-radius: 5px 5px 0 0;
+    width: 60%;
+    box-shadow: 0px 10px 28px -10px rgba(0,0,0,0.75);
 
     .title {
         display: flex;
         height: 100px;
-        color: white;
+        color: $blue;
         border-radius: 5px 5px 0 0;
-        background-color: #222;
+        background-color: $dark-grey;
 
         h1 {
           font-size: 2.0em;
@@ -18,20 +24,30 @@
     }
 
     .upcoming-events {
-        
+        background-color: $blue;
         .venue-row {
                 text-align: center;
                 font-size: 1.5em;
                 background: #bbb;
+                height: 60px;
+                width: 90%;
+                margin: auto;
+                box-shadow: 0px 10px 28px -10px rgba(0,0,0,0.75);
+
             }
     }
 
     .past-events {
+        background-color: $blue;
 
         .venue-row {
             text-align: center;
             font-size: 1.5em;
             background: #bbb;
+            width: 90%;
+            height: 60px;
+            margin: auto;
+            box-shadow: 0px 10px 28px -10px rgba(0,0,0,0.75);
         }
     }
     

@@ -1,12 +1,7 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-// import KoalaRoutes from '../routes';
 import '../_Styles/navbar.scss';
-import LoginView from './login-view';
-// import UserProfile from './user-profile';
-
-// const userRole = 'player';
 
 class Navbar extends React.Component {
     render() {
@@ -37,7 +32,7 @@ class Navbar extends React.Component {
                             <Link to="/Dashboard">Dashboard</Link>
                         </li>
                         <li>
-                            <Link to="/DirectorProfile"> Profile</Link>
+                            <Link to="/Venues">Venues</Link>
                         </li>
                     </ul>
                 </div>

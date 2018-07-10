@@ -1,5 +1,6 @@
 import { combineReducers, createStore } from 'redux';
 import James from '../_Styles/Imgs/james.jpg';
+import '../_Styles/director-dash.scss';
 
 
 function testReducer(state = { test: 'this is a test aaaa' }, action) {
@@ -26,7 +27,7 @@ function userReducer(state = {
         city: 'indianapolis',
         ID: 123,
         points: 24,
-        role: '',
+        role: 'director',
     },
 }, action) {
     switch (action.type) {
