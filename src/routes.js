@@ -8,9 +8,8 @@ import DirectorView from './Components/director-view';
 import LoginView from './Components/login-view';
 import DashBoard from './Components/director-dash';
 import LeaderBoard from './Components/leader-board';
-
+import Venues from './Components/venues';
 import './_Styles/routes.scss';
-import DirectorProfile from './Components/director-profile';
 
 
 const KoalaRoutes = () => (
@@ -26,7 +25,7 @@ const KoalaRoutes = () => (
                 <Route path="/leaderboard" component={LeaderBoard} />
                 {/* <Route path="/signup" component={UserSignup} /> */}
                 <Route path="/UserProfile" component={UserProfile} />
-                <Route path="/DirectorProfile" component={DirectorProfile} />
+                <Route path="/Venues" component={Venues} />
                 <Route component={NoMatch} />
             </Switch>
         </div>
