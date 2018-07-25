@@ -7,26 +7,23 @@ const user = {
     name: 'James',
 };
 
-class CurrentScore extends React.Component {
-    render() {
-        return (
-            <div className="user-score-container">
-                <div className="title">
-                    <h1>  Current Score </h1>
-                </div>
+const CurrentScore = props => (
 
-                <div className="outer-box">
+    <div className="user-score-container">
+        <div className="title">
+            <h1>  Current Score </h1>
+        </div>
 
-                    <div className="content-box">
-                        <h3> Welome {user.name} </h3>
-                        <h3>Your current score is {score} points </h3>
-                    </div>
+        <div className="outer-box">
 
-                </div>
-
+            <div className="content-box">
+                <h3> Welome {user.name} </h3>
+                <h3>Your current score is {score} points </h3>
             </div>
-        );
-    }
-}
+
+        </div>
+
+    </div>
+);
 
 export default CurrentScore;

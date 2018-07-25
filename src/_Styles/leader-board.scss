@@ -1,7 +1,7 @@
 .leader-board-box {
     background-color: #EEE2CF;
     margin: auto;
-    border-radius: 5px 5px 0 0;
+    border-radius: 2px 2px 0 0;
     height: 325px;
 
     .title {
@@ -38,9 +38,8 @@
         .board-row {
             margin: auto;
             text-align: center;
-            height: 54px;
+            height: 50px;
             width: 100%;
-            line-height: 50px;
             background-color: #7FB9A9;
             opacity: .6;
         }

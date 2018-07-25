@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../_Styles/navbar.scss';
 
 class Navbar extends React.Component {
     render() {
-        console.log(this.props);
         if (this.props.user.role === 'user') {
             return (
                 <div className="navbar">
