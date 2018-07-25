@@ -27,7 +27,7 @@ function userReducer(state = {
         city: 'indianapolis',
         ID: 123,
         points: 24,
-        role: 'director',
+        role: 'user',
     },
 }, action) {
     switch (action.type) {
