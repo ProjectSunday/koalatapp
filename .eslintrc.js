@@ -17,7 +17,7 @@ module.exports = {
         "react/jsx-indent": ["error", 4],
         // "object-curly-newline": "never",
         "no-use-before-define": 0,
-
+        "class-methods-use-this": 0,
     },
     "settings": {
         "import/resolver": {

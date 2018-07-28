@@ -22,11 +22,12 @@ module.exports = {
     ],
     resolve: {
         alias: {
+            _Styles: resolve(__dirname, 'src/_Styles'),
             Actions: resolve(__dirname, 'src/Actions'),
             Components: resolve(__dirname, 'src/Components'),
+            config: resolve(__dirname, 'config.js'),
             Store: resolve(__dirname, 'src/Store'),
             src: resolve(__dirname, 'src'),
-            _Styles: resolve(__dirname, 'src/_Styles'),
         },
     },
     devServer: {
