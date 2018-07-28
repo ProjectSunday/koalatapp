@@ -4,10 +4,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import Amplify from 'aws-amplify';
+// import Amplify from 'aws-amplify';
 // import { withAuthenticator } from 'aws-amplify-react';
 
-import awsExports from 'src/aws-exports';
+// import awsExports from 'src/aws-exports';
 
 import KoalaRoutes from './routes';
 import './_Styles/Index.scss';
@@ -16,7 +16,7 @@ import './_Styles/Index.scss';
 import store from './Store';
 
 
-Amplify.configure(awsExports);
+// Amplify.configure(awsExports);
 
 
 const App = () => (

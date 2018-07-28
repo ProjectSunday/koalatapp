@@ -7,8 +7,10 @@
 // AWS Mobile Hub Project Constants
 const awsmobile = {
     'aws_app_analytics': 'enable',
-    'aws_cognito_identity_pool_id': 'us-east-2:1036471a-3ea5-4750-b759-f19af515a56e',
-    'aws_cognito_region': 'us-east-2',
+    // 'aws_cognito_identity_pool_id': 'us-east-2:905189c1-a431-48eb-b73b-2f970609fabe',
+    // 'aws_cognito_region': 'us-east-2',
+    // region: 'us-east-2',
+
     'aws_content_delivery': 'enable',
     'aws_content_delivery_bucket': 'koalatappawsmobile-hosting-mobilehub-1614086192',
     'aws_content_delivery_bucket_region': 'us-east-2',
@@ -20,14 +22,15 @@ const awsmobile = {
     'aws_project_name': 'koalatapp-awsmobile',
     'aws_project_region': 'us-east-2',
     'aws_resource_name_prefix': 'koalatappawsmobile-mobilehub-1614086192',
-    'aws_sign_in_enabled': 'enable',
-    'aws_user_pools': 'enable',
-    'aws_user_pools_id': 'us-east-2_k3iNSPOJi',
-    'aws_user_pools_mfa_type': 'ON',
-    'aws_user_pools_web_client_id': '30ffloo70g3v5tju36ttue8bqk',
     'aws_appsync_graphqlEndpoint': 'https://2iqf5kctojebpejyatpd77ajsa.appsync-api.us-east-2.amazonaws.com/graphql',
     'aws_appsync_region': 'us-east-2',
     'aws_appsync_authenticationType': 'AMAZON_COGNITO_USER_POOLS',
+    'aws_appsync_apiKey': 'da2-m7wtxab4mvdatd55g4x53hlb7u',
+    Auth: {
+        region: 'us-east-2',
+        userPoolId: 'us-east-2_TCxraEfCf',
+        userPoolWebClientId: '3bao2pmai9hv2j2g5sdu8dvgc6',
+    }
 }
 
 export default awsmobile;
