@@ -19,7 +19,7 @@ function testReducer(state = { test: 'this is a test aaaa' }, action) {
 }
 
 function userReducer(state = {
-    user: {
+    profile: {
         firstName: 'James',
         lastName: 'Boyer',
         img: { James },
@@ -38,6 +38,12 @@ function userReducer(state = {
         var newState = Object.assign({}, ...state, newUser);
 
         return newState;
+
+    case 'USER_SET_PROFILE': {
+        const { profile } = action;
+        var newState = Object.assign({}, ...state, { profile });
+        return newState;
+    }
 
     default:
         return state;

@@ -18,7 +18,8 @@ module.exports = {
         // "object-curly-newline": "never",
         "no-use-before-define": 0,
         "class-methods-use-this": 0,
-        "import/order": 0
+        "import/order": 0,
+        "import/prefer-default-export": 0
     },
     "settings": {
         "import/resolver": {

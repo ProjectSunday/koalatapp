@@ -13,33 +13,25 @@ import NoMatch from './Components/NoMatch';
 import UserSignup from './Components/UserSignup/UserSignup';
 import Venues from './Components/venues';
 
-import './_Styles/routes.scss';
-
-
-const KoalaRoutes = () => (
+const Routes = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path="/authcallback" component={AuthCallback} />
-            {Routes}
+            <Fragment>
+                <Navbar />
+                <Route exact path="/" component={AuthWrapper} />
+                <Route path="/UserHome" component={HomeView} />
+                <Route path="/DirectorView" component={DirectorView} />
+                <Route exact path="/login" component={LoginView} />
+                <Route path="/Dashboard" component={DashBoard} />
+                <Route path="/leaderboard" component={LeaderBoard} />
+                <Route path="/signup" component={UserSignup} />
+                <Route path="/UserProfile" component={UserProfile} />
+                <Route path="/Venues" component={Venues} />
+                <Route component={NoMatch} />
+            </Fragment>
         </Switch>
     </BrowserRouter>
 );
 
-const Routes = (
-    <Fragment>
-        <Navbar />
-        <Route exact path="/" component={AuthWrapper} />
-        <Route path="/UserHome" component={HomeView} />
-        <Route path="/DirectorView" component={DirectorView} />
-        <Route exact path="/login" component={LoginView} />
-        <Route path="/Dashboard" component={DashBoard} />
-        <Route path="/leaderboard" component={LeaderBoard} />
-        <Route path="/signup" component={UserSignup} />
-        <Route path="/UserProfile" component={UserProfile} />
-        <Route path="/Venues" component={Venues} />
-        <Route component={NoMatch} />
-    </Fragment>
-);
-
-
-export default KoalaRoutes;
+export default Routes;
