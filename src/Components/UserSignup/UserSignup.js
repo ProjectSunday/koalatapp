@@ -181,6 +181,7 @@ class UserSignup extends React.Component {
                 </div> */}
 
                 <button onClick={this.signInClicked}>signin</button>
+                <a href="https://koalauserpool-dev.auth.us-east-2.amazoncognito.com/login?response_type=code&client_id=ncfrp1i43pfh1av4blr7pda8r&redirect_uri=http://localhost:8080/authcallback">Sign in/signup</a>
                 {/* <button onClick={this.props.googleSignIn}>google sigin</button> */}
             </div>
 
