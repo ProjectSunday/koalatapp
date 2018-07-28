@@ -1,8 +1,14 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { CognitoAuth } from 'amazon-cognito-auth-js';
 
 import config from 'config';
 import KoalaApi from '../Actions/koalat-api';
+
+import { ProfileActions } from 'Actions';
+// import wtf from 'Actions';
+
+console.log('authcallback', ProfileActions);
 
 export default class AuthCallback extends React.Component {
     constructor() {
@@ -20,17 +26,33 @@ export default class AuthCallback extends React.Component {
         };
         const auth = new CognitoAuth(authData);
 
+        this.state = {
+            authenticated: false,
+        };
+
+        const self = this;
+
         auth.userhandler = {
             onSuccess(result) {
-                // console.log('token', result.getAccessToken().getJwtToken());
+                console.log('result', result);
                 const token = result.getAccessToken().getJwtToken();
-                KoalaApi.query('{query{test}}', token).then((a) => {
-                    console.log('a', a);
+                // KoalaApi.query('{query { profile { email, memberId } }}', token).then((a) => {
+                //     console.log('a', a);
+                // });
+
+                const fakeProfile = {
+                    email: 'blah@gmail.com',
+                    name: 'name blah',
+                    role: 'director',
+                };
+                ProfileActions.setProfile(fakeProfile);
+
+                self.setState({
+                    authenticated: true,
                 });
-                // showSignedIn(result);
             },
             onFailure(err) {
-                console.log('errr', err);
+                console.log('CognitoAuth err:', err);
             },
         };
 
@@ -45,11 +67,7 @@ export default class AuthCallback extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                nothing
-            </div>
-
-        );
+        if (this.state.authenticated) return <Redirect to="/" />;
+        return <div>Processing...</div>;
     }
 }

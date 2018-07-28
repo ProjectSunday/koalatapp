@@ -20,13 +20,14 @@ class AuthWrapper extends React.Component {
             );
         }
         return (
-            <Redirect from="/" to="/login" component={LoginView} />
+            <LoginView />
+            // <Redirect from="/" to="/login" component={LoginView} />
         );
     }
 }
 
 const mapStateToProps = state => ({
-    user: state.user.user,
+    user: state.user.profile,
 });
 
 export default connect(mapStateToProps)(AuthWrapper);

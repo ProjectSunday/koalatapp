@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 
 // import awsExports from 'src/aws-exports';
 
-import KoalaRoutes from './routes';
+import Routes from './Routes';
 import './_Styles/Index.scss';
 
 
@@ -21,7 +21,7 @@ import store from './Store';
 
 const App = () => (
     <Provider store={store}>
-        <KoalaRoutes />
+        <Routes />
     </Provider>
 );
 
