@@ -22,7 +22,7 @@ import { Auth, Cache } from 'aws-amplify';
 import AWS from 'aws-sdk';
 
 import { CognitoAuth } from 'amazon-cognito-auth-js';
-import KoalatApi from '../../Actions/koalat-api';
+// import KoalatApi from '../../Actions/koalat-api';
 import { SignUp } from '../../../node_modules/aws-amplify-react/dist/Auth';
 
 // ES Modules, e.g. transpiling with Babel

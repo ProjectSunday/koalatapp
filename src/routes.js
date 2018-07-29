@@ -28,8 +28,8 @@ const Routes = () => (
                 <Route path="/signup" component={UserSignup} />
                 <Route path="/UserProfile" component={UserProfile} />
                 <Route path="/Venues" component={Venues} />
-                <Route component={NoMatch} />
             </Fragment>
+            <Route component={NoMatch} />
         </Switch>
     </BrowserRouter>
 );
