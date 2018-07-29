@@ -21,7 +21,6 @@ class AuthWrapper extends React.Component {
         }
         return (
             <LoginView />
-            // <Redirect from="/" to="/login" component={LoginView} />
         );
     }
 }

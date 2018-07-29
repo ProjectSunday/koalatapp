@@ -1,58 +1,25 @@
 import { combineReducers, createStore } from 'redux';
-import James from '../_Styles/Imgs/james.jpg';
 import '../_Styles/director-dash.scss';
-
+import UserReducer from './UserReducer';
 
 function testReducer(state = { test: 'this is a test aaaa' }, action) {
     switch (action.type) {
-    case 'TEST_1':
-        return {
-            test: action.testValue,
-        };
-    case 'SET_TEST_VALUE':
-        return {
-            test: state.test + action.value,
-        };
-    default:
-        return state;
-    }
-}
-
-function userReducer(state = {
-    profile: {
-        firstName: 'James',
-        lastName: 'Boyer',
-        img: { James },
-        email: 'jamesboyer@boyer.com',
-        city: 'indianapolis',
-        ID: 123,
-        points: 24,
-        role: 'user',
-    },
-}, action) {
-    switch (action.type) {
-    case 'UPDATE_USER':
-        var newUser = {
-            user: action.user,
-        };
-        var newState = Object.assign({}, ...state, newUser);
-
-        return newState;
-
-    case 'USER_SET_PROFILE': {
-        const { profile } = action;
-        var newState = Object.assign({}, ...state, { profile });
-        return newState;
-    }
-
-    default:
-        return state;
+        case 'TEST_1':
+            return {
+                test: action.testValue,
+            };
+        case 'SET_TEST_VALUE':
+            return {
+                test: state.test + action.value,
+            };
+        default:
+            return state;
     }
 }
 
 const reducer = combineReducers({
     testing: testReducer,
-    user: userReducer,
+    user: UserReducer,
 });
 const store = createStore(
     reducer,
