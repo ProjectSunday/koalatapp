@@ -12,7 +12,7 @@ export default class AuthCallback extends React.Component {
         super();
         this.state = { authenticated: false };
         const h = window.location.href;
-        AuthActions.getProfile(h).then(() => {
+        AuthActions.getAWSProfile(h).then(() => {
             this.setState({
                 authenticated: true,
             });

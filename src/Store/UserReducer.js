@@ -26,15 +26,10 @@ export default (state = initialState, action) => {
             const { profile } = action;
             return Object.assign({}, ...state, { profile });
         }
-
-        case 'USER_SET_JWTTOKEN': {
-            const { jwtToken } = action;
-            return Object.assign({}, ...state, { jwtToken });
-        }
-
         case 'USER_SET': {
             const { user } = action;
-            return Object.assign({}, ...state, { user });
+            const blah = Object.assign({}, state, user);
+            return blah;
         }
 
         default:

@@ -21,6 +21,7 @@ module.exports = {
         "import/order": 0,
         "import/prefer-default-export": 0,
         "max-len": 0,
+        "import/no-cycle": 0,
     },
     "settings": {
         "import/resolver": {

@@ -4,7 +4,7 @@ import config from 'config';
 import Store from 'Store';
 import { KoalaApi } from 'Actions';
 
-export const getProfile = href => new Promise((resolve) => {
+export const getAWSProfile = href => new Promise((resolve) => {
     const authData = {
         ClientId: config.AWS_COGNITO_CLIENT_ID,
         AppWebDomain: config.AWS_COGNITO_APP_WEB_DOMAIN,
@@ -20,24 +20,20 @@ export const getProfile = href => new Promise((resolve) => {
 
     auth.userhandler = {
         onSuccess(result) {
-            const token = result.getAccessToken().getJwtToken();
+            const jwtToken = result.getAccessToken().getJwtToken();
 
-            // const fakeProfile = {
-            //     email: 'blah@gmail.com',
-            //     name: 'name blah',
-            //     role: 'director',
-            // };
-
-            Store.dispath({
+            Store.dispatch({
                 type: 'USER_SET',
-                token,
+                user: { jwtToken },
             });
 
-            KoalaApi.send('{query { test }}').then((profile) => {
-                Store.dispatch({
-                    type: 'USER_SET',
-                    profile,
-                });
+
+            KoalaApi.send('query { profile { email sub } }').then((data) => {
+                console.log('data', data);
+                // Store.dispatch({
+                //     type: 'USER_SET',
+                //     user: { profile },
+                // });
                 resolve();
             });
         },
