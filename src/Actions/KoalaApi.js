@@ -1,15 +1,16 @@
 // import gql from 'graphql-tag';
 
 import config from 'config';
+import Store from 'Store';
 
 const ENDPOINT = config.AWS_APPSYNC_GRAPHQL_ENDPOINT;
 
-export const send = async (query, token) => {
+export const send = async (query) => {
     const response = await fetch(ENDPOINT, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/graphql',
-            Authorization: token,
+            Authorization: Store.getState().user.jwtToken,
         },
         body: JSON.stringify({ query }),
     });
