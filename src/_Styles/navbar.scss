@@ -1,34 +1,4 @@
-.navbar {
-    height: 50px;
-    width: 100%;
-    background-color: #2B373E;
-    margin-bottom: 20px;
-    
-    ul {
-        display: flex;
-        list-style: none;
-        padding: 0px;
-
-        li {
-           list-style: none;
-            margin: auto;
-            font-size: 25px;
-            line-height: 50px;
-
-            :hover {
-                border-bottom: 4px solid cadetblue;
-            }
-            
-            a {
-                color: #7FB9A9;
-                text-decoration: none;
-                opacity: 0.6;
-
-                &:hover {
-                    opacity: 1;
-                }
-            }
-        }
-    
-    }
+a {
+    text-decoration: none;
+    color: inherit;
 }
