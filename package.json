@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ProjectSunday/koalatapp#readme",
   "dependencies": {
+    "@material-ui/core": "^1.4.2",
     "amazon-cognito-auth-js": "^1.2.4",
     "amazon-cognito-identity-js": "^2.0.16",
     "apollo-cache-inmemory": "^1.2.5",
@@ -33,7 +34,7 @@
     "file-loader": "^1.1.11",
     "graphql-tag": "^2.9.2",
     "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
