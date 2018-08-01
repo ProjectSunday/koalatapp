@@ -25,7 +25,6 @@ const DirectorLinks = () => (
         <li><Link to="/Venues">Venues</Link></li>
     </ul>
 );
-
 const Navbar = ({ role }) => {
     let links;
     if (!role) {
@@ -41,7 +40,10 @@ const Navbar = ({ role }) => {
                 <Typography variant="title" color="inherit" style={{ flex: 1 }}>
                           Koala-T
                 </Typography>
-                <Button color="inherit"><a href={signInHref}>Login</a></Button>
+                <a href={signInHref}>
+                    <Button color="inherit">Login</Button>
+                </a>
+
                 {links}
             </Toolbar>
         </AppBar>
