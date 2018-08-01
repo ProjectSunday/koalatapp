@@ -29,30 +29,33 @@ class Navbar extends React.Component {
             );
         }
 
-        if (this.props.user.role === 'director') {
-            return (
-                <div className="navbar">
-                    <ul>
-                        <li>
-                            <Link to="/DirectorView">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/Dashboard">Dashboard</Link>
-                        </li>
-                        <li>
-                            <Link to="/Venues">Venues</Link>
-                        </li>
-                    </ul>
-                </div>
-            );
-        }
-        if (!this.props.user.role) {
-            return (null);
-        }
-    }
-}
+const UserLinks = () => (
+    <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/userprofile">Profile</Link></li>
+    </ul>
+);
+
+const DirectorLinks = () => (
+    <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/Dashboard">Dashboard</Link></li>
+        <li><Link to="/Venues">Venues</Link></li>
+    </ul>
+);
+
+const Navbar = ({ role }) => {
+    if (!role) return <div>Unable to determine role</div>;
+
+    const links = role === 'director' ? <DirectorLinks /> : <UserLinks />;
+    return (
+        <div className="navbar">
+            {links}
+        </div>
+    );
+};
 
 const mapStateToProps = state => ({
-    user: state.user.profile,
+    role: state.user.profile.role,
 });
 export default connect(mapStateToProps)(Navbar);
