@@ -10,7 +10,7 @@ export const send = async (query) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/graphql',
-            Authorization: Store.getState().user.jwtToken,
+            Authorization: Store.getState().user.jwtToken || 'blah',
         },
         body: JSON.stringify({ query }),
     });
