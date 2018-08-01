@@ -57,6 +57,6 @@ const getScore = async () => {
     const { score } = data.getScore;
     Store.dispatch({
         type: 'USER_SET',
-        user: { score },
+        user: { score: 2 },
     });
 };

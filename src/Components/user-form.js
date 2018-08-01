@@ -38,13 +38,6 @@ const UserForm = (props) =>
                             onChange={props.onChange}
                         />
 
-                        <TextInput
-                            name="city"
-                            label="City"
-                            value={props.user.city}
-                            onChange={props.onChange}
-                        />
-
                         <input
                             type="submit"
                             disabled={props.saving}
