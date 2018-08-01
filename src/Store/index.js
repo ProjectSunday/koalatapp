@@ -1,6 +1,7 @@
 import { combineReducers, createStore } from 'redux';
 import '../_Styles/director-dash.scss';
 import UserReducer from './UserReducer';
+import LeaderboardReducer from './LeaderboardReducer';
 
 function testReducer(state = { test: 'this is a test aaaa' }, action) {
     switch (action.type) {
@@ -20,6 +21,7 @@ function testReducer(state = { test: 'this is a test aaaa' }, action) {
 const reducer = combineReducers({
     testing: testReducer,
     user: UserReducer,
+    leaderboard: LeaderboardReducer,
 });
 const store = createStore(
     reducer,
