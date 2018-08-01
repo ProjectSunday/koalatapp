@@ -27,5 +27,5 @@ export const send = async (query) => {
         e.json = json;
         throw e;
     }
-    return json;
+    return json.data;
 };

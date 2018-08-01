@@ -22,6 +22,7 @@ module.exports = {
         "import/prefer-default-export": 0,
         "max-len": 0,
         "import/no-cycle": 0,
+        "object-curly-newline": 0,
     },
     "settings": {
         "import/resolver": {

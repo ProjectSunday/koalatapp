@@ -17,18 +17,18 @@ import './user-signup.scss';
 //     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 // }
 
-import { Auth, Cache } from 'aws-amplify';
+// import { Auth, Cache } from 'aws-amplify';
 
-import AWS from 'aws-sdk';
+// import AWS from 'aws-sdk';
 
-import { CognitoAuth } from 'amazon-cognito-auth-js';
-// import KoalatApi from '../../Actions/koalat-api';
-import { SignUp } from '../../../node_modules/aws-amplify-react/dist/Auth';
+// import { CognitoAuth } from 'amazon-cognito-auth-js';
+// // import KoalatApi from '../../Actions/koalat-api';
+// import { SignUp } from '../../../node_modules/aws-amplify-react/dist/Auth';
 
 // ES Modules, e.g. transpiling with Babel
 
 
-window.googleInit = function () {
+// window.googleInit = function () {
 // gapi.load('auth2', function() {
 //     gapi.auth2.init({
 //         client_id: '191304805062-d0rck99u7ej5j0329q0e9gvsa5tj4a4t.apps.googleusercontent.com'
@@ -58,7 +58,7 @@ window.googleInit = function () {
 //  });
 
 
-};
+// };
 
 
 // Amplify.configure(aws_exports);
@@ -130,36 +130,36 @@ class UserSignup extends React.Component {
         document.head.appendChild(script);
     }
 
-    signInClicked() {
-        gapi.load('auth2', () => {
-            gapi.auth2.init({
-                client_id: '191304805062-d0rck99u7ej5j0329q0e9gvsa5tj4a4t.apps.googleusercontent.com',
-            });
+    // signInClicked() {
+    //     gapi.load('auth2', () => {
+    //         gapi.auth2.init({
+    //             client_id: '191304805062-d0rck99u7ej5j0329q0e9gvsa5tj4a4t.apps.googleusercontent.com',
+    //         });
 
-            const gAuth = window.gapi.auth2.getAuthInstance();
-            gAuth.signIn().then((gUser) => {
-                const { id_token, expires_at } = gUser.getAuthResponse();
-                const profile = gUser.getBasicProfile();
-                const user = {
-                    email: profile.getEmail(),
-                    name: profile.getName(),
-                };
+    //         const gAuth = window.gapi.auth2.getAuthInstance();
+    //         gAuth.signIn().then((gUser) => {
+    //             const { id_token, expires_at } = gUser.getAuthResponse();
+    //             const profile = gUser.getBasicProfile();
+    //             const user = {
+    //                 email: profile.getEmail(),
+    //                 name: profile.getName(),
+    //             };
 
-                const authData = {
-                    ClientId: '3bao2pmai9hv2j2g5sdu8dvgc6', // Your client id here
-                    AppWebDomain: 'https://koalauserpool.auth.us-east-2.amazoncognito.com',
-                    TokenScopesArray: ['email', 'profile', 'openid'], // e.g.['phone', 'email', 'profile','openid', 'aws.cognito.signin.user.admin'],
-                    RedirectUriSignIn: 'http://localhost:8080',
-                    // RedirectUriSignOut: '<TODO: add redirect url when signed out>',
-                    IdentityProvider: 'google', // e.g. 'Facebook',
-                    UserPoolId: 'us-east-2_TCxraEfCf', // Your user pool id here
-                    // AdvancedSecurityDataCollectionFlag: '<TODO: boolean value indicating whether you want to enable advanced security data collection>', // e.g. true
-                    // Storage: '<TODO the storage object>', // OPTIONAL e.g. new CookieStorage(), to use the specified storage provided
-                };
-                const auth = new CognitoAuth(authData);
-            });
-        });
-    }
+    //             const authData = {
+    //                 ClientId: '3bao2pmai9hv2j2g5sdu8dvgc6', // Your client id here
+    //                 AppWebDomain: 'https://koalauserpool.auth.us-east-2.amazoncognito.com',
+    //                 TokenScopesArray: ['email', 'profile', 'openid'], // e.g.['phone', 'email', 'profile','openid', 'aws.cognito.signin.user.admin'],
+    //                 RedirectUriSignIn: 'http://localhost:8080',
+    //                 // RedirectUriSignOut: '<TODO: add redirect url when signed out>',
+    //                 IdentityProvider: 'google', // e.g. 'Facebook',
+    //                 UserPoolId: 'us-east-2_TCxraEfCf', // Your user pool id here
+    //                 // AdvancedSecurityDataCollectionFlag: '<TODO: boolean value indicating whether you want to enable advanced security data collection>', // e.g. true
+    //                 // Storage: '<TODO the storage object>', // OPTIONAL e.g. new CookieStorage(), to use the specified storage provided
+    //             };
+    //             const auth = new CognitoAuth(authData);
+    //         });
+    //     });
+    // }
 
     render() {
         return (
@@ -180,8 +180,7 @@ class UserSignup extends React.Component {
                     <div className="g-signin2" data-onsuccess="onSignIn"></div>
                 </div> */}
 
-                <button onClick={this.signInClicked}>signin</button>
-                <a href="https://koalauserpool-dev.auth.us-east-2.amazoncognito.com/login?response_type=code&client_id=ncfrp1i43pfh1av4blr7pda8r&redirect_uri=http://localhost:8080/authcallback">Sign in/signup</a>
+                {/* <button onClick={this.signInClicked}>signin</button> */}
                 {/* <button onClick={this.props.googleSignIn}>google sigin</button> */}
             </div>
 
