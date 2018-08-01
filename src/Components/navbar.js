@@ -6,29 +6,6 @@ import {
 } from '@material-ui/core';
 import '../_Styles/navbar.scss';
 
-class Navbar extends React.Component {
-    render() {
-        if (this.props.user.role === 'user') {
-            return (
-                <AppBar position="static">
-                    <Toolbar>
-                        <Typography variant="title" color="inherit" style={{ flex: 1 }}>
-                          Koala-T
-                        </Typography>
-                        <Button color="inherit"><a href="https://koalauserpool-dev.auth.us-east-2.amazoncognito.com/login?response_type=code&client_id=ncfrp1i43pfh1av4blr7pda8r&redirect_uri=http://localhost:8080/authcallback">Login</a></Button>
-                        {/* <ul>
-                        <li>
-                            <Link to="/UserHome">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/userprofile"> Profile</Link>
-                        </li>
-                    </ul> */}
-                    </Toolbar>
-                </AppBar>
-            );
-        }
-
 const UserLinks = () => (
     <ul>
         <li><Link to="/">Home</Link></li>
@@ -49,9 +26,15 @@ const Navbar = ({ role }) => {
 
     const links = role === 'director' ? <DirectorLinks /> : <UserLinks />;
     return (
-        <div className="navbar">
-            {links}
-        </div>
+        <AppBar position="static">
+            <Toolbar>
+                <Typography variant="title" color="inherit" style={{ flex: 1 }}>
+                          Koala-T
+                </Typography>
+                <Button color="inherit"><a href="https://koalauserpool-dev.auth.us-east-2.amazoncognito.com/login?response_type=code&client_id=ncfrp1i43pfh1av4blr7pda8r&redirect_uri=http://localhost:8080/authcallback">Login</a></Button>
+                {links}
+            </Toolbar>
+        </AppBar>
     );
 };
 
