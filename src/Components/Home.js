@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import LeaderBoard from './leader-board';
+import { LeaderBoard } from 'Components';
 import CurrentScore from './user-current-score';
 import UpcomingEvents from './upcomingevents';
 
