@@ -7,7 +7,7 @@ import '_Styles/login-view.scss';
 
 const signInHref = `https://${config.AWS_COGNITO_APP_WEB_DOMAIN}/login?response_type=code&client_id=${config.AWS_COGNITO_CLIENT_ID}&redirect_uri=${config.AWS_COGNITO_REDIRECT_URI_SIGNIN}`;
 
-const LoginView = () => (
+const Landing = () => (
     <div className="container">
         {/* <Logo /> */}
         <a href={signInHref}>Sign in/signup</a>
@@ -21,4 +21,4 @@ const LoginView = () => (
 );
 
 
-export default LoginView;
+export default Landing;

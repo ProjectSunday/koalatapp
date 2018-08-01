@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+import config from 'config';
+
 import {
     AppBar, Toolbar, Button, Typography,
 } from '@material-ui/core';
 import '../_Styles/navbar.scss';
+
+const signInHref = `https://${config.AWS_COGNITO_APP_WEB_DOMAIN}/login?response_type=code&client_id=${config.AWS_COGNITO_CLIENT_ID}&redirect_uri=${config.AWS_COGNITO_REDIRECT_URI_SIGNIN}`;
 
 const UserLinks = () => (
     <ul>
@@ -22,16 +27,21 @@ const DirectorLinks = () => (
 );
 
 const Navbar = ({ role }) => {
-    if (!role) return <div>Unable to determine role</div>;
-
-    const links = role === 'director' ? <DirectorLinks /> : <UserLinks />;
+    let links;
+    if (!role) {
+        links = null;
+    } else if (role === 'director') {
+        links = <DirectorLinks />;
+    } else {
+        links = <UserLinks />;
+    }
     return (
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="title" color="inherit" style={{ flex: 1 }}>
                           Koala-T
                 </Typography>
-                <Button color="inherit"><a href="https://koalauserpool-dev.auth.us-east-2.amazoncognito.com/login?response_type=code&client_id=ncfrp1i43pfh1av4blr7pda8r&redirect_uri=http://localhost:8080/authcallback">Login</a></Button>
+                <Button color="inherit"><a href={signInHref}>Login</a></Button>
                 {links}
             </Toolbar>
         </AppBar>
