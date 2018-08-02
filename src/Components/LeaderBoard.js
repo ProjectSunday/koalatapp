@@ -6,18 +6,20 @@ import { PointActions } from 'Actions';
 
 import Svg from '../_Styles/Imgs/Koala.svg';
 import '../_Styles/leader-board.scss';
+import { cloneDeep } from 'apollo-utilities';
 
 
 class LeaderBoard extends React.Component {
-    constructor() {
-        super();
+    constructor(props, context) {
+        super(props, context);
         PointActions.getLeaderboard();
     }
 
     render() {
         console.log('render', this.props.leaderboard);
         const title = 'Koala-T ';
-        const info = 'stats';
+        const info = this.props.leaderboard;
+
 
         return (
             <div className="leader-board-box">
@@ -28,18 +30,12 @@ class LeaderBoard extends React.Component {
                 </div>
 
                 <div className="content-container">
-                    <div className="board-row">
-                        {info}
-                    </div>
-                    <div className="board-row">
-                        {info}
-                    </div>
-                    <div className="board-row">
-                        {info}
-                    </div>
-                    <div className="board-row">
-                        {info}
-                    </div>
+                    {info.map((points, i) => (
+                        <div key={i} className="board-row">
+                            <p>{points.firstName} {points.lastName} {points.points}</p>
+                        </div>
+                    ))}
+
                 </div>
 
             </div>
@@ -48,11 +44,8 @@ class LeaderBoard extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
-    console.log('asdfdsf');
-    return {
-        leaderboard: deepClone(state.leaderboard),
-    };
-};
+const mapStateToProps = state => ({
+    leaderboard: deepClone(state.leaderboard),
+});
 
 export default connect(mapStateToProps)(LeaderBoard);

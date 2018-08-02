@@ -13,9 +13,9 @@ const HomeView = ({ role }) => {
     return (
         <div className="home-view-container">
             <div className="home-view-content">
-                <div className="left"><CurrentScore /></div>
+                {/* <div className="left"><CurrentScore /></div> */}
                 <div className="center"><LeaderBoard /></div>
-                <div className="right"><UpcomingEvents /></div>
+                {/* <div className="right"><UpcomingEvents /></div> */}
             </div>
 
         </div>
