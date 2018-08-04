@@ -2,9 +2,8 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { Home, Landing, LeaderBoard, Navbar } from 'Components';
+import { AuthCallback, Home, Landing, LeaderBoard, Navbar } from 'Components';
 import UserProfile from './Components/user-profile';
-import AuthCallback from './Components/AuthCallback';
 // import AuthWrapper from './Components/AuthWrapper';
 // import DirectorView from './Components/director-view';
 import LoginView from './Components/login-view';

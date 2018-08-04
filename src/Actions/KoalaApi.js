@@ -29,3 +29,28 @@ export const send = async (query) => {
     }
     return json.data;
 };
+
+export const send2 = async (query) => {
+    const response = await fetch('http://localhost:3000/graphql', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+        body: JSON.stringify({ query }),
+    });
+
+    if (response.status !== 200) {
+        // console.error('Network Error in query(), response:', response);  // eslint-disable-line
+        throw new Error(`sendQuery() status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    if (json.errors) {
+        console.error('sendQuery() json:', json);  // eslint-disable-line
+        const e = new Error(`sendQuery() graph: ${query}`);
+        e.json = json;
+        throw e;
+    }
+    return json.data;
+};

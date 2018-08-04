@@ -60,3 +60,8 @@ const getScore = async () => {
         user: { score: 2 },
     });
 };
+
+export const googleSignIn = async () => {
+    const data = await KoalaApi.send2('query { getGoogleAuthUrl }');
+    window.location = data.getGoogleAuthUrl;
+};
