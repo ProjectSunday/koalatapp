@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { LeaderBoard } from 'Components';
-import CurrentScore from './user-current-score';
 import UpcomingEvents from './upcomingevents';
 
 import '_Styles/home-view.scss';
@@ -13,8 +12,7 @@ const HomeView = ({ role }) => {
     return (
         <div className="home-view-container">
             <div className="home-view-content">
-                <div className="left"><CurrentScore /></div>
-                <div className="center"><LeaderBoard /></div>
+                <div className="left"><LeaderBoard /></div>
                 <div className="right"><UpcomingEvents /></div>
             </div>
 
