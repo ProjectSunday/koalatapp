@@ -36,6 +36,7 @@ export const send2 = async (query) => {
         headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json',
+            Authorization: Store.getState().user.jwtToken,
         },
         body: JSON.stringify({ query }),
     });

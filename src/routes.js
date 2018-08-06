@@ -47,7 +47,7 @@ const Routes = ({ authenticated }) => {
 };
 
 const mapStateToProps = state => ({
-    authenticated: !!state.user.userName,
+    authenticated: !!state.user._id,
 });
 
 export default connect(mapStateToProps)(Routes);

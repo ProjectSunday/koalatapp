@@ -23,6 +23,8 @@ module.exports = {
         "max-len": 0,
         "import/no-cycle": 0,
         "object-curly-newline": 0,
+        "object-shorthand": 0,
+        "no-underscore-dangle": 0,
     },
     "settings": {
         "import/resolver": {
