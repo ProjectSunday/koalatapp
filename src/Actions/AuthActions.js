@@ -3,6 +3,7 @@ import { CognitoAuth } from 'amazon-cognito-auth-js';
 import config from 'config';
 import Store from 'Store';
 import { KoalaApi } from 'Actions';
+import James from '../_Styles/Imgs/james.jpg';
 
 export const authenticate = href => new Promise((resolve, reject) => {
     const authData = {
@@ -48,7 +49,7 @@ const getProfile = async (result) => {
         const { firstName, lastName, email, role, userName } = data.profile;
         Store.dispatch({
             type: 'USER_SET',
-            user: { profile: { firstName, lastName, email, role }, userName },
+            user: { profile: { firstName, lastName, email, role, img: James }, userName },
         });
     });
 };
