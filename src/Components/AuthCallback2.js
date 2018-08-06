@@ -1,17 +1,15 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-import config from 'config';
-
 import { AuthActions } from 'Actions';
-
 
 export default class AuthCallback extends React.Component {
     constructor() {
         super();
         this.state = { authenticated: false };
-        const h = window.location.href;
-        AuthActions.authenticate(h).then(() => {
+        const code = decodeURIComponent(window.location.search.substring(6));
+        // console.log('code', code);
+        AuthActions.authenticate2(code).then(() => {
             this.setState({
                 authenticated: true,
             });
