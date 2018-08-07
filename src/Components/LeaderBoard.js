@@ -7,20 +7,13 @@ import '../_Styles/leader-board.scss';
 
 import { Paper, Table, TableBody, TableRow, TableCell, withStyles } from '@material-ui/core';
 
-const styles = theme => ({
-    root: {
-        width: '100%',
-        marginTop: theme.spacing.unit * 3,
-        overflowX: 'auto',
-        backgroundColor: theme.palette.common.red,
-    },
+const styles = () => ({
     table: {
         minWidth: 700,
     },
-    row: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.background.default,
-        },
+    title: {
+        fontFamily: 'Julius Sans One',
+        textAlign: 'center',
     },
 });
 
@@ -35,15 +28,14 @@ class LeaderBoard extends React.Component {
 
         return (
             <div className="leader-board-box">
-                <div style={{ fontFamily: 'Julius Sans One' }} className="title">
-                    <img src={Svg} alt="koala" />
+                <div style={{ fontFamily: 'Julius Sans One', textAlign: 'center' }} className="title">
                     <h1>Koala-T Leader Board</h1>
                 </div>
                 <Paper style={{ borderRadius: '0px' }}>
                     <Table>
                         <TableBody>
-                            {info.map(n => (
-                                <TableRow key={n.id}>
+                            {info.map((n, i) => (
+                                <TableRow key={i}>
                                     <TableCell component="th" scope="row" style={{ textAlign: 'center' }}>
                                         {n.firstName} {n.lastName}   -   Current Score: {n.points}
                                     </TableCell>

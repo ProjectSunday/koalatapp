@@ -2,12 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Svg from '../_Styles/Imgs/Koala.svg';
-
 import config from 'config';
-
-import {
-    AppBar, Toolbar, Button, Typography,
-} from '@material-ui/core';
+import { AppBar, Toolbar, Button, Typography } from '@material-ui/core';
 import '../_Styles/navbar.scss';
 
 const signInHref = `https://${config.AWS_COGNITO_APP_WEB_DOMAIN}/login?response_type=code&client_id=${config.AWS_COGNITO_CLIENT_ID}&redirect_uri=${config.AWS_COGNITO_REDIRECT_URI_SIGNIN}`;
@@ -34,6 +30,17 @@ const styles = {
     li: {
         display: 'flex',
     },
+    p: {
+        marginLeft: '10px',
+        fontSize: '20px',
+        fontFamily: 'Julius Sans One',
+    },
+    Typo: {
+        flex: 1,
+        fontFamily: 'Julius Sans One',
+        fontSize: '30px',
+        letterSpacing: '1px',
+    },
 };
 
 const UserLinks = props => (
@@ -50,7 +57,7 @@ const UserLinks = props => (
         </li>
         <li style={styles.li}>
             <img src={props.img} alt="j" style={styles.img} />
-            <p style={{ marginLeft: '10px' }}>Score: {props.score}</p>
+            <p style={styles.p}>Points: {props.score}</p>
         </li>
     </ul>
 );
@@ -75,7 +82,7 @@ const DirectorLinks = () => (
     </ul>
 );
 
-const Navbar = ({ role, img, score }) => {
+const Navbar = ({ role, img, score, authenticated }) => {
     let links;
     if (!role) {
         links = null;
@@ -84,18 +91,26 @@ const Navbar = ({ role, img, score }) => {
     } else {
         links = <UserLinks img={img} score={score} />;
     }
+
+    let button;
+    if (authenticated) {
+        button = null;
+    } else {
+        button = (
+            <a href={signInHref}>
+                <Button color="inherit" style={styles.button}>Login</Button>
+            </a>
+        );
+    }
+
     return (
         <AppBar position="static">
             <Toolbar>
                 <img src={Svg} alt="koala" style={{ height: '50px', marginRight: '20px' }} />
-
-                <Typography variant="title" color="inherit" style={{ flex: 1, fontFamily: 'Julius Sans One', fontSize: '30px', letterSpacing: '1px' }}>
-                             Koala-T
+                <Typography variant="title" color="inherit" style={styles.Typo}>
+                    Koala-T
                 </Typography>
-                <a href={signInHref}>
-                    <Button color="inherit" style={styles.button}>Login</Button>
-                </a>
-
+                {button}
                 {links}
             </Toolbar>
         </AppBar>
@@ -106,5 +121,6 @@ const mapStateToProps = state => ({
     role: state.user.profile.role,
     img: state.user.profile.img,
     score: state.user.score,
+    authenticated: !!state.user.userName,
 });
 export default connect(mapStateToProps)(Navbar);
