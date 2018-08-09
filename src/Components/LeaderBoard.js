@@ -20,7 +20,8 @@ class LeaderBoard extends React.Component {
         const title = 'Koala-T ';
         const info = this.props.leaderboard;
 
-
+        const { givenName, familyName, points } = this.props.leaderboard;
+        const { leaderboard } = this.props;
         return (
             <div className="leader-board-box">
 
@@ -30,9 +31,9 @@ class LeaderBoard extends React.Component {
                 </div>
 
                 <div className="content-container">
-                    {info.map((points, i) => (
+                    {leaderboard.map((l, i) => (
                         <div key={i} className="board-row">
-                            <p>{points.firstName} {points.lastName} {points.points}</p>
+                            <p>{i + 1} {l.givenName} {l.familyName} {l.points}</p>
                         </div>
                     ))}
 

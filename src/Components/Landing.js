@@ -6,14 +6,10 @@ import { LeaderBoard } from 'Components';
 // import '_Styles/login-view.scss';
 
 class Landing extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
         return (
             <div className="container">
-                {/* <LeaderBoard /> */}
+                <LeaderBoard />
             </div>
         );
     }
