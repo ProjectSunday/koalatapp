@@ -121,9 +121,9 @@ const Navbar = ({ role, img, score, authenticated }) => {
 };
 
 const mapStateToProps = state => ({
-    role: state.user.profile.role,
-    img: state.user.profile.img,
-    score: state.user.score,
-    authenticated: !!state.user.userName,
+    role: state.user.role,
+    img: state.user.imageUrl,
+    score: state.user.points,
+    authenticated: !!state.user._id,
 });
 export default connect(mapStateToProps)(Navbar);
