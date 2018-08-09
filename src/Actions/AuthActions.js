@@ -3,6 +3,7 @@ import { CognitoAuth } from 'amazon-cognito-auth-js';
 import config from 'config';
 import Store from 'Store';
 import { KoalaApi } from 'Actions';
+import James from '../_Styles/Imgs/james.jpg';
 
 export const authenticate2 = async (code) => {
     const data = await KoalaApi.send2(`mutation { authenticate (code: "${code}") { _id googleId email givenName familyName imageUrl jwtToken } }`);

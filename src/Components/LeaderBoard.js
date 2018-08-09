@@ -1,13 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import deepClone from 'lodash.clonedeep';
-
 import { PointActions } from 'Actions';
-
 import Svg from '../_Styles/Imgs/Koala.svg';
 import '../_Styles/leader-board.scss';
-import { cloneDeep } from 'apollo-utilities';
 
+import { Paper, Table, TableBody, TableRow, TableCell, withStyles } from '@material-ui/core';
+
+const styles = () => ({
+    table: {
+        minWidth: 700,
+    },
+    title: {
+        fontFamily: 'Julius Sans One',
+        textAlign: 'center',
+    },
+});
 
 class LeaderBoard extends React.Component {
     constructor(props, context) {
@@ -16,29 +24,26 @@ class LeaderBoard extends React.Component {
     }
 
     render() {
-        console.log('render', this.props.leaderboard);
-        const title = 'Koala-T ';
         const info = this.props.leaderboard;
 
-        const { givenName, familyName, points } = this.props.leaderboard;
-        const { leaderboard } = this.props;
         return (
             <div className="leader-board-box">
-
-                <div className="title">
-                    <img src={Svg} alt="koala" />
-                    <h1>{title} Leader Board</h1>
+                <div style={{ fontFamily: 'Julius Sans One', textAlign: 'center' }} className="title">
+                    <h1>Koala-T Leader Board</h1>
                 </div>
-
-                <div className="content-container">
-                    {leaderboard.map((l, i) => (
-                        <div key={i} className="board-row">
-                            <p>{i + 1} {l.givenName} {l.familyName} {l.points}</p>
-                        </div>
-                    ))}
-
-                </div>
-
+                <Paper style={{ borderRadius: '0px' }}>
+                    <Table>
+                        <TableBody>
+                            {info.map((n, i) => (
+                                <TableRow key={i}>
+                                    <TableCell component="th" scope="row" style={{ textAlign: 'center' }}>
+                                        {n.firstName} {n.lastName}   -   Current Score: {n.points}
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </Paper>
             </div>
         );
     }
@@ -49,4 +54,4 @@ const mapStateToProps = state => ({
     leaderboard: deepClone(state.leaderboard),
 });
 
-export default connect(mapStateToProps)(LeaderBoard);
+export default withStyles(styles)(connect(mapStateToProps)(LeaderBoard));

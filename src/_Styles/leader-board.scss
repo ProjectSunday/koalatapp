@@ -1,14 +1,12 @@
 .leader-board-box {
     background-color: #EEE2CF;
     margin: auto;
-    border-radius: 2px 2px 0 0;
 
     .title {
         display: flex;
         height: 100px;
         width: 100%;
         color: white;
-        border-radius: 5px 5px 0 0;
         background-color: #2B373E;
         box-shadow: 0px 10px 28px -10px rgba(0,0,0,0.75);
 
@@ -26,27 +24,4 @@
         }
 
     }
-
-
-    .content-container {
-       box-shadow: 0px 10px 28px -10px rgba(0,0,0,0.75);
-
-
-        .board-row {
-            margin: auto;
-            text-align: center;
-            height: 50px;
-            width: 100%;
-            background-color: #7FB9A9;
-            opacity: .6;
-        }
-
-        .board-row:nth-child(2n) {
-            background-color: #6E7871;
-        }
-
-}
-
-    
-
 }
