@@ -37,7 +37,7 @@ class LeaderBoard extends React.Component {
                             {info.map((n, i) => (
                                 <TableRow key={i}>
                                     <TableCell component="th" scope="row" style={{ textAlign: 'center' }}>
-                                        {n.firstName} {n.lastName}   -   Current Score: {n.points}
+                                        {n.givenName} {n.familyName}   -   Current Score: {n.points}
                                     </TableCell>
                                 </TableRow>
                             ))}
