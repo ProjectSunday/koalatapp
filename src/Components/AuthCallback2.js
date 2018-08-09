@@ -2,8 +2,16 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 import { AuthActions } from 'Actions';
+import { CircularProgress, withStyles } from '@material-ui/core';
+import '../_Styles/loader.scss';
 
-export default class AuthCallback extends React.Component {
+const styles = theme => ({
+    progress: {
+        margin: theme.spacing.unit * 2,
+    },
+});
+
+class AuthCallback extends React.Component {
     constructor() {
         super();
         this.state = { authenticated: false };
@@ -18,6 +26,12 @@ export default class AuthCallback extends React.Component {
 
     render() {
         if (this.state.authenticated) return <Redirect to="/" />;
-        return <div>Authenticating...</div>;
+        return (
+            <div className="loader">
+                <CircularProgress className={styles.progress} size={200} style={{ margin: 'auto' }} />
+            </div>
+        );
     }
 }
+
+export default withStyles(styles)(AuthCallback);
