@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import James from '_Styles/Imgs/james.jpg';
 import { updateUser } from '../Actions/userActions';
 import UserForm from './user-form';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 
 
 class UserProfile extends React.Component {
@@ -62,17 +63,18 @@ class UserProfile extends React.Component {
 
         return (
             <div className="user-profile-container">
-                <div className="user-content">
-
-                    <div className="head" />
-                    <img src={James} alt="j" />
-                    <div className="user-profile-body">
+                <Card style={{ maxWidth: '345' }}>
+                    <CardMedia
+                        style={{ height: 0, paddingTop: '56.25%', borderRadius: '100' }}
+                        image={James}
+                    />
+                    <CardContent>
                         <h4>{this.props.user.profile.firstName} {this.props.user.profile.lastName}</h4>
                         <h4>Email: {this.props.user.profile.email}</h4>
                         <h4>Points: {this.props.user.score}</h4>
                         <button onClick={this.toggleEdit}>Edit</button>
-                    </div>
-                </div>
+                    </CardContent>
+                </Card>
             </div>
 
 
