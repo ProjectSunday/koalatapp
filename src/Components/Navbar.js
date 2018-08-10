@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Svg from '../_Styles/Imgs/Koala.svg';
 import config from 'config';
-import { AppBar, Toolbar, Button, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Button, Typography, jssPreset } from '@material-ui/core';
 import '../_Styles/navbar.scss';
 
 import { GoogleAuthActions, AuthActions } from 'Actions';
 
 const signInHref = `https://${config.AWS_COGNITO_APP_WEB_DOMAIN}/login?response_type=code&client_id=${config.AWS_COGNITO_CLIENT_ID}&redirect_uri=${config.AWS_COGNITO_REDIRECT_URI_SIGNIN}`;
+
+//  Getting rather large need to import this from another file, check with hai on best practices for importing jss
 
 const styles = {
     font: {
@@ -24,6 +26,7 @@ const styles = {
         fontFamily: 'Julius Sans One',
         fontSize: '20px',
         letterSpacing: '1px',
+
     },
     ul: {
         display: 'flex',
@@ -52,13 +55,10 @@ const UserLinks = props => (
                 <Button color="inherit" style={styles.button}>Home</Button>
             </Link>
         </li>
-        <li>
-            <Link to="/userprofile" style={styles.font}>
-                <Button color="inherit" style={styles.button}>Profile</Button>
-            </Link>
-        </li>
         <li style={styles.li}>
-            <img src={props.img} alt="j" style={styles.img} />
+            <Link to="/userprofile">
+                <img src={props.img} alt="j" style={styles.img} />
+            </Link>
             <p style={styles.p}>Points: {props.score}</p>
         </li>
     </ul>
@@ -99,9 +99,7 @@ const Navbar = ({ role, img, score, authenticated }) => {
         button = null;
     } else {
         button = (
-            <a href={signInHref}>
-                <Button color="inherit" style={styles.button}>Login</Button>
-            </a>
+            <Button style={styles.button} color="inherit" onClick={AuthActions.googleSignIn}>Google Sign In</Button>
         );
     }
 
@@ -112,7 +110,6 @@ const Navbar = ({ role, img, score, authenticated }) => {
                 <Typography variant="title" color="inherit" style={styles.Typo}>
                     Koala-T
                 </Typography>
-                <Button onClick={AuthActions.googleSignIn}>Google SignIn</Button>
                 {button}
                 {links}
             </Toolbar>
