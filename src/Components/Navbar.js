@@ -13,14 +13,19 @@ const signInHref = `https://${config.AWS_COGNITO_APP_WEB_DOMAIN}/login?response_
 //  Getting rather large need to import this from another file, check with hai on best practices for importing jss
 
 const styles = {
+    appbar: {
+        marginBottom: '100',
+    },
     font: {
         fontFamily: 'Julius Sans One',
         fontSize: '20px',
         padding: '0 30px' },
     img: {
-        height: '60px',
-        width: '60px',
+        height: '50px',
+        width: '50px',
         borderRadius: '30px',
+        marginTop: '6px',
+        marginRight: '20px',
     },
     button: {
         fontFamily: 'Julius Sans One',
@@ -34,6 +39,7 @@ const styles = {
     },
     li: {
         display: 'flex',
+        margin: 'auto',
     },
     p: {
         marginLeft: '10px',
@@ -104,8 +110,8 @@ const Navbar = ({ role, img, score, authenticated }) => {
     }
 
     return (
-        <AppBar position="static">
-            <Toolbar>
+        <AppBar position="static" style={styles.appbar}>
+            <Toolbar style={{ height: '50px' }}>
                 <img src={Svg} alt="koala" style={{ height: '50px', marginRight: '20px' }} />
                 <Typography variant="title" color="inherit" style={styles.Typo}>
                     Koala-T
@@ -123,4 +129,5 @@ const mapStateToProps = state => ({
     score: state.user.points,
     authenticated: !!state.user._id,
 });
+
 export default connect(mapStateToProps)(Navbar);
