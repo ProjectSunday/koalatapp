@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 import { AuthActions } from 'Actions';
-import { withStyles, CircularProgress, purple } from '@material-ui/core';
+import { withStyles, CircularProgress } from '@material-ui/core';
 import '../_Styles/loader.scss';
 
 const styles = theme => ({

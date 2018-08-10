@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import James from '_Styles/Imgs/james.jpg';
 import { updateUser } from '../Actions/userActions';
 import UserForm from './user-form';
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
+import { Avatar, IconButton, MoreVertIcon, Card, CardHeader, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 
 
 class UserProfile extends React.Component {
@@ -52,7 +52,7 @@ class UserProfile extends React.Component {
             return (
                 <div>
                     <UserForm
-                        user={this.props.user}
+                        user={this.user}
                         onSave={this.saveUserState}
                         onChange={this.updateUserState}
                         toggleEdit={this.toggleEdit}
@@ -64,14 +64,21 @@ class UserProfile extends React.Component {
         return (
             <div className="user-profile-container">
                 <Card style={{ maxWidth: '345' }}>
+                    <CardHeader
+                        avatar={(
+                            <Avatar>{this.props.givenName}</Avatar>
+                        )}
+                        title={this.props.givenName}
+                        subheader="September 14, 2016"
+                    />
                     <CardMedia
                         style={{ height: 0, paddingTop: '56.25%', borderRadius: '100' }}
-                        image={James}
+                        image={this.props.img}
                     />
                     <CardContent>
-                        <h4>{this.props.user.profile.firstName} {this.props.user.profile.lastName}</h4>
-                        <h4>Email: {this.props.user.profile.email}</h4>
-                        <h4>Points: {this.props.user.score}</h4>
+
+                        <h4>Email: {this.props.email}</h4>
+                        <h4>Points: {this.props.score}</h4>
                         <button onClick={this.toggleEdit}>Edit</button>
                     </CardContent>
                 </Card>
@@ -84,7 +91,13 @@ class UserProfile extends React.Component {
 
 const mapStateToProps = state => ({
     user: state.user,
-});
+    givenName: state.user.givenName,
+    familyName: state.user.familyName,
+    img: state.user.imageUrl,
+    score: state.user.points,
+    email: state.user.email,
+    authenticated: !!state.user._id,
 
+});
 
 export default connect(mapStateToProps)(UserProfile);
