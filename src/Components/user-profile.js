@@ -63,7 +63,7 @@ class UserProfile extends React.Component {
 
         return (
             <div className="user-profile-container">
-                <Card style={{ maxWidth: '345' }}>
+                <Card style={{ maxWidth: '345', marginTop: '100' }}>
                     <CardHeader
                         avatar={(
                             <Avatar>{this.props.givenName}</Avatar>

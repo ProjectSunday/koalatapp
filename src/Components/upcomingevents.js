@@ -1,5 +1,6 @@
 import React from 'react';
 import '../_Styles/upcoming-events.scss';
+import { Paper, Table, TableBody, TableRow, TableCell, withStyles } from '@material-ui/core';
 
 const styles = {
     font: {
@@ -10,18 +11,56 @@ const styles = {
     },
 };
 
+const fakeData = [
+    {
+        location: 'Old Pros Table',
+        time: '7:00pm',
+        date: 'August 7th, 2018',
+    },
+    {
+        location: 'Buffalo Wild Wings',
+        time: '7:00pm',
+        date: 'August 19th, 2018',
+    },
+    {
+        location: 'Old Pros Table',
+        time: '7:00pm',
+        date: 'August 27th, 2018',
+    },
+    {
+        location: 'koala-t headquarters',
+        time: '7:00pm',
+        date: 'August 30th, 2018',
+    },
+];
 
-const UpcomingEvents = props => (
-    <div className="events-box">
-        <div className="events-title">
-            <h1 style={styles.font}> Upcoming Events </h1>
-        </div>
-        <div className="upcoming-event-container">
-            <div className="events-row">
-                <h3>said event from meetup api or website</h3>
+
+class UpcomingEvents extends React.Component {
+    render() {
+        return (
+            <div className="events-box">
+                <div className="events-title">
+                    <h1 style={styles.font}> Upcoming Events </h1>
+                </div>
+                <Paper style={{ borderRadius: 0 }}>
+                    <Table>
+                        <TableBody>
+                            {fakeData.map((n, i) => (
+                                <TableRow key={i}>
+                                    <TableCell>
+                                        <h4>{n.location}</h4>
+                                        <h6>{n.time}</h6>
+                                        <h6>{n.date}</h6>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </Paper>
             </div>
-        </div>
-    </div>
-);
+        );
+    }
+}
+
 
 export default UpcomingEvents;
