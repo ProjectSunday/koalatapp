@@ -52,7 +52,7 @@ class UserProfile extends React.Component {
             return (
                 <div>
                     <UserForm
-                        user={this.user}
+                        user={this.props.user}
                         onSave={this.saveUserState}
                         onChange={this.updateUserState}
                         toggleEdit={this.toggleEdit}
@@ -63,20 +63,19 @@ class UserProfile extends React.Component {
 
         return (
             <div className="user-profile-container">
-                <Card style={{ maxWidth: '345', marginTop: '100' }}>
+                <Card style={{ borderRadius: '0' }}>
                     <CardHeader
                         avatar={(
                             <Avatar>{this.props.givenName}</Avatar>
                         )}
                         title={this.props.givenName}
-                        subheader="September 14, 2016"
+                        style={{ fontFamily: 'Julius Sans One' }}
                     />
                     <CardMedia
                         style={{ height: 0, paddingTop: '56.25%', borderRadius: '100' }}
                         image={this.props.img}
                     />
                     <CardContent>
-
                         <h4>Email: {this.props.email}</h4>
                         <h4>Points: {this.props.score}</h4>
                         <button onClick={this.toggleEdit}>Edit</button>

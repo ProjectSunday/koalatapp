@@ -1,4 +1,5 @@
 import React from 'react';
+import '../_Styles/landing.scss';
 
 import { PointActions } from 'Actions';
 import { LeaderBoard } from 'Components';
