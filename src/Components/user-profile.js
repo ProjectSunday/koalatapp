@@ -65,17 +65,20 @@ class UserProfile extends React.Component {
             <div className="user-profile-container">
                 <Card style={{ borderRadius: '0' }}>
                     <CardHeader
-                        avatar={(
-                            <Avatar>{this.props.givenName}</Avatar>
-                        )}
+                        avatar={(<Avatar>JB</Avatar>)}
+                        style={{ fontFamily: 'Julius Sans One', fontSize: '20' }}
                         title={this.props.givenName}
-                        style={{ fontFamily: 'Julius Sans One' }}
+                        color="inherit"
                     />
-                    <CardMedia
-                        style={{ height: 0, paddingTop: '56.25%', borderRadius: '100' }}
-                        image={this.props.img}
-                    />
-                    <CardContent>
+
+                    <div className="img-box">
+                        <CardMedia
+                            style={{ paddingTop: '56.25%', borderRadius: '100px', width: '200px', margin: 'auto' }}
+                            image={this.props.img}
+                        />
+                    </div>
+
+                    <CardContent style={{ textAlign: 'center' }}>
                         <h4>Email: {this.props.email}</h4>
                         <h4>Points: {this.props.score}</h4>
                         <button onClick={this.toggleEdit}>Edit</button>

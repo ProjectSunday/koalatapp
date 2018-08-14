@@ -111,7 +111,7 @@ const Navbar = ({ role, img, score, authenticated }) => {
 
     return (
         <AppBar position="static" style={styles.appbar}>
-            <Toolbar style={{ height: '50px' }}>
+            <Toolbar style={{ height: '50px', backgroundColor: '#222', color: 'white' }}>
                 <img src={Svg} alt="koala" style={{ height: '50px', marginRight: '20px' }} />
                 <Typography variant="title" color="inherit" style={styles.Typo}>
                     Koala-T

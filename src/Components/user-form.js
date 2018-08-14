@@ -8,17 +8,20 @@ const UserForm = (props) =>
     <Card style={{ borderRadius: '0' }}>
         <CardHeader
             avatar={(
-                <Avatar>J</Avatar>
+                <Avatar>JB</Avatar>
             )}
-            title={props.givenName}
-            style={{ fontFamily: 'Julius Sans One' }}
+            title={props.user.givenName}
+            style={{ fontFamily: 'Julius Sans One', fontSize: '20',}}
         />
+
+        <div className="img-box">
         <CardMedia
-            style={{ height: 0, paddingTop: '56.25%', borderRadius: '100' }}
-            image={props.user.img}
+            style={{ paddingTop: '56.25%', borderRadius: '100px', width: '200px', margin: 'auto' }}
+            image={props.user.imageUrl}
         />
+        </div>
         <CardContent>
-        <form>
+        <form style={{display: 'flex', flexDirection: 'column', alignItems: 'center', alignContent: 'space-between'}}>
                 <TextInput
                 name="firstName"
                 label="First Name"
@@ -52,6 +55,7 @@ const UserForm = (props) =>
                 disabled={props.saving}
                 className="btn btn-primary"
                 onClick={(event)=> props.onSave, props.toggleEdit}
+                style={{margin: '15px'}}
             />
         </form>   
         </CardContent>
