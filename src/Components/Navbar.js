@@ -15,6 +15,7 @@ const signInHref = `https://${config.AWS_COGNITO_APP_WEB_DOMAIN}/login?response_
 const styles = {
     appbar: {
         marginBottom: '100',
+        width: '100%',
     },
     font: {
         fontFamily: 'Julius Sans One',
