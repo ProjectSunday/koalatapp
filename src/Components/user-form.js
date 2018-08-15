@@ -16,7 +16,7 @@ const UserForm = (props) =>
 
         <div className="img-box">
         <CardMedia
-            style={{ paddingTop: '56.25%', borderRadius: '100px', width: '200px', margin: 'auto' }}
+            style={{ paddingTop: '56.25%' }}
             image={props.user.imageUrl}
         />
         </div>
