@@ -47,7 +47,7 @@ class UpcomingEvents extends React.Component {
                         <TableBody>
                             {fakeData.map((n, i) => (
                                 <TableRow key={i}>
-                                    <TableCell>
+                                    <TableCell style={{ textAlign: 'center' }}>
                                         <h4>{n.location}</h4>
                                         <h6>{n.time}</h6>
                                         <h6>{n.date}</h6>
