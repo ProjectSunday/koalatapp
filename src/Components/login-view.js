@@ -1,11 +1,10 @@
 import React from 'react';
 
-import config from 'config';
 // import Logo from './logo';
 import '_Styles/login-view.scss';
 
 
-const signInHref = `https://${config.AWS_COGNITO_APP_WEB_DOMAIN}/login?response_type=code&client_id=${config.AWS_COGNITO_CLIENT_ID}&redirect_uri=${config.AWS_COGNITO_REDIRECT_URI_SIGNIN}`;
+const signInHref = `obsolete`;
 
 const Landing = () => (
     <div className="container">
