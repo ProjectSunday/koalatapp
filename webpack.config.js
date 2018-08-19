@@ -23,7 +23,7 @@ module.exports = () => {
             }),
             new webpack.DefinePlugin({
                 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
-                'process.env.API_URL': JSON.stringify(process.env.API_URL || 'http://localhost:3000/graphql'),
+                'process.env.API_URL': JSON.stringify(process.env.API_URL || 'http://localhost:9001/graphql'),
             }),
         ],
         resolve: {

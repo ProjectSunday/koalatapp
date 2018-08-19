@@ -2,7 +2,7 @@ import Store from 'Store';
 import { KoalaApi } from 'Actions';
 
 export const getLeaderboard = async () => {
-    const data = await KoalaApi.send2('query { leaderboard { givenName familyName points } }');
+    const data = await KoalaApi.send('query { leaderboard { givenName familyName points } }');
     const { leaderboard } = data;
     Store.dispatch({
         type: 'LEADERBOARD_SET',

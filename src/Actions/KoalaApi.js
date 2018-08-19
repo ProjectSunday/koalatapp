@@ -1,9 +1,7 @@
 import Store from 'Store';
 
-const API_URL = process.env.API_URL || 'http://localhost:3000/graphql';
-
-export const send2 = async (query) => {
-    const response = await fetch(API_URL, {
+export const send = async (query) => {
+    const response = await fetch(process.env.API_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
