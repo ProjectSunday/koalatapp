@@ -23,8 +23,11 @@ class LeaderBoard extends React.Component {
         PointActions.getLeaderboard();
     }
 
+
     render() {
         const info = this.props.leaderboard;
+        const sorted = info.sort((a, b) => b.points - a.points);
+
 
         return (
             <div className="leader-board-box">
@@ -34,7 +37,7 @@ class LeaderBoard extends React.Component {
                 <Paper style={{ borderRadius: '0px' }}>
                     <Table>
                         <TableBody>
-                            {info.map((n, i) => (
+                            {sorted.map((n, i) => (
                                 <TableRow key={i}>
                                     <TableCell component="th" scope="row" style={{ textAlign: 'center' }}>
                                         {n.givenName} {n.familyName}   -   Current Score: {n.points}
