@@ -1,6 +1,4 @@
-import { CognitoAuth } from 'amazon-cognito-auth-js';
-
-import config from 'config';
+// import config from 'config';
 import Store from 'Store';
 import { KoalaApi } from 'Actions';
 import James from '../_Styles/Imgs/james.jpg';

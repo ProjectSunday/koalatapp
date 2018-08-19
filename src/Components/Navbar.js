@@ -1,14 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Svg from '../_Styles/Imgs/Koala.svg';
-import config from 'config';
 import { AppBar, Toolbar, Button, Typography, jssPreset } from '@material-ui/core';
 import '../_Styles/navbar.scss';
 
 import { GoogleAuthActions, AuthActions } from 'Actions';
-
-const signInHref = `https://${config.AWS_COGNITO_APP_WEB_DOMAIN}/login?response_type=code&client_id=${config.AWS_COGNITO_CLIENT_ID}&redirect_uri=${config.AWS_COGNITO_REDIRECT_URI_SIGNIN}`;
 
 //  Getting rather large need to import this from another file, check with hai on best practices for importing jss
 
