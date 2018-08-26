@@ -3,6 +3,9 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { createMuiTheme, MuiThemeProvider, CssBaseline } from '@material-ui/core';
+
+
 
 // import Amplify from 'aws-amplify';
 // import { withAuthenticator } from 'aws-amplify-react';
@@ -19,10 +22,19 @@ import store from './Store';
 // Amplify.configure(awsExports);
 
 
+const theme = createMuiTheme({
+    palette: {
+        type: 'dark',
+    },
+});
+
 const App = () => (
-    <Provider store={store}>
-        <Routes />
-    </Provider>
+    <MuiThemeProvider theme={theme}>
+    <CssBaseline/>
+        <Provider store={store}>
+            <Routes />
+        </Provider>
+    </MuiThemeProvider>
 );
 
 // const federated = {

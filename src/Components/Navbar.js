@@ -12,7 +12,6 @@ import { GoogleAuthActions, AuthActions } from 'Actions';
 const styles = {
     appbar: {
         marginBottom: '100',
-        width: '100%',
     },
     font: {
         fontFamily: 'Julius Sans One',
@@ -109,7 +108,7 @@ const Navbar = ({ role, img, score, authenticated }) => {
 
     return (
         <AppBar position="static" style={styles.appbar}>
-            <Toolbar style={{ height: '50px', backgroundColor: '#222', color: 'white' }}>
+            <Toolbar style={{ height: '50px', backgroundColor: '#222', color: 'inherit' }}>
                 <img src={Svg} alt="koala" style={{ height: '50px', marginRight: '20px' }} />
                 <Typography variant="title" color="inherit" style={styles.Typo}>
                     Koala-T

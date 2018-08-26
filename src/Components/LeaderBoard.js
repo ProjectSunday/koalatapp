@@ -4,8 +4,9 @@ import deepClone from 'lodash.clonedeep';
 import { PointActions } from 'Actions';
 import Svg from '../_Styles/Imgs/Koala.svg';
 import '../_Styles/leader-board.scss';
+import TablePaginationActionsWrapped from './paginationActionsTable';
 
-import { Paper, Table, TableBody, TableRow, TableCell, withStyles } from '@material-ui/core';
+import { Paper, Table, TableBody, TableRow, TableCell, withStyles, TableFooter, TablePagination } from '@material-ui/core';
 
 const styles = () => ({
     table: {
@@ -24,32 +25,58 @@ class LeaderBoard extends React.Component {
     }
 
 
-    render() {
-        const info = this.props.leaderboard;
-        const sorted = info.sort((a, b) => b.points - a.points);
+        state = {
+            page: 0,
+            rowsPerPage: 5,
+        };
 
+        handleChangePage = (event, page) => {
+            this.setState({ page });
+        };
 
-        return (
-            <div className="leader-board-box">
-                <div style={{ fontFamily: 'Julius Sans One', textAlign: 'center' }} className="title">
-                    <h1>Koala-T Leader Board</h1>
-                </div>
-                <Paper style={{ borderRadius: '0px' }}>
-                    <Table>
-                        <TableBody>
-                            {sorted.map((n, i) => (
-                                <TableRow key={i}>
-                                    <TableCell component="th" scope="row" style={{ textAlign: 'center' }}>
-                                        {n.givenName} {n.familyName}   -   Current Score: {n.points}
-                                    </TableCell>
+        handleChangeRowsPerPage = (event) => {
+            this.setState({ rowsPerPage: event.target.value });
+        };
+
+        render() {
+            const info = this.props.leaderboard;
+            const sorted = info.sort((a, b) => b.points - a.points);
+            const { rowsPerPage, page } = this.state;
+
+            return (
+                <div className="leader-board-box">
+                    <div style={{ fontFamily: 'Julius Sans One', textAlign: 'center' }} className="title">
+                        <h1>Koala-T Leader Board</h1>
+                    </div>
+                    <Paper style={{ borderRadius: '0px' }}>
+                        <Table>
+                            <TableBody>
+                                {sorted.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, i) => (
+                                    <TableRow key={i}>
+                                        <TableCell component="th" scope="row" style={{ textAlign: 'center' }}>
+                                            {n.givenName} {n.familyName}   -   Current Score: {n.points}
+                                        </TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                            <TableFooter>
+                                <TableRow>
+                                    <TablePagination
+                                        colSpan={3}
+                                        count={sorted.length}
+                                        rowsPerPage={rowsPerPage}
+                                        page={page}
+                                        onChangePage={this.handleChangePage}
+                                        onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                                        ActionsComponent={TablePaginationActionsWrapped}
+                                    />
                                 </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </Paper>
-            </div>
-        );
-    }
+                            </TableFooter>
+                        </Table>
+                    </Paper>
+                </div>
+            );
+        }
 }
 
 
