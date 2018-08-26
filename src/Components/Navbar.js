@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Svg from '../_Styles/Imgs/Koala.svg';
 import { AppBar, Toolbar, Button, Typography, jssPreset } from '@material-ui/core';
 import '../_Styles/navbar.scss';
+import TemporaryDrawer from '../Components/rightTempDrawer';
 
-import { GoogleAuthActions, AuthActions } from 'Actions';
+
 
 //  Getting rather large need to import this from another file, check with hai on best practices for importing jss
 
@@ -102,7 +103,7 @@ const Navbar = ({ role, img, score, authenticated }) => {
         button = null;
     } else {
         button = (
-            <Button style={styles.button} color="inherit" onClick={AuthActions.googleSignIn}>Google Sign In</Button>
+            <TemporaryDrawer/>
         );
     }
 
@@ -128,3 +129,4 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(Navbar);
+

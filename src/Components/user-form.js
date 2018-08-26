@@ -26,6 +26,7 @@ const UserForm = (props) =>
                 name="firstName"
                 label="First Name"
                 value={props.user.givenName}
+                style={{borderRadus: '20px'}}
                 onChange={props.onChange}
             />
 

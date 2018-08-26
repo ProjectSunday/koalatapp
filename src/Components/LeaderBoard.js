@@ -66,6 +66,7 @@ class LeaderBoard extends React.Component {
                                         count={sorted.length}
                                         rowsPerPage={rowsPerPage}
                                         page={page}
+                                        style={{margin: 'auto'}}
                                         onChangePage={this.handleChangePage}
                                         onChangeRowsPerPage={this.handleChangeRowsPerPage}
                                         ActionsComponent={TablePaginationActionsWrapped}
