@@ -19,6 +19,10 @@ const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     width: 500,
+    height: 600,
+    position: 'relative',
+    marginTop: '40px',
+    margin: 'auto',
   },
 });
 

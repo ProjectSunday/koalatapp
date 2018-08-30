@@ -25,7 +25,7 @@ class LeaderBoard extends React.Component {
 
         state = {
             page: 0,
-            rowsPerPage: 10,
+            rowsPerPage: 5,
         };
 
         handleChangePage = (event, page) => {
