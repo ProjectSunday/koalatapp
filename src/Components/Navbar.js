@@ -2,9 +2,12 @@ import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Svg from '../_Styles/Imgs/Koala.svg';
+import person from '../_Styles/Imgs/personcircle.svg';
 import { AppBar, Toolbar, Button, Typography, jssPreset } from '@material-ui/core';
 import '../_Styles/navbar.scss';
 import TemporaryDrawer from '../Components/rightTempDrawer';
+import { GoogleAuthActions, AuthActions } from 'Actions';
+import Login from '../Components/signupForm';
 
 
 
@@ -22,14 +25,19 @@ const styles = {
         height: '50px',
         width: '50px',
         borderRadius: '30px',
-        marginTop: '6px',
-        marginRight: '20px',
+        outline: 'none',   
     },
     button: {
         fontFamily: 'Julius Sans One',
         fontSize: '20px',
         letterSpacing: '1px',
-
+    },
+    userButton: {
+        extend: 'button',
+        backgroundColor: 'transparent',
+        margin: 'auto',
+        padding: '4px',
+        borderRadius: '40px',
     },
     ul: {
         display: 'flex',
@@ -88,38 +96,66 @@ const DirectorLinks = () => (
     </ul>
 );
 
-const Navbar = ({ role, img, score, authenticated }) => {
-    let links;
-    if (!role) {
-        links = null;
-    } else if (role === 'director') {
-        links = <DirectorLinks />;
-    } else {
-        links = <UserLinks img={img} score={score} />;
+// change to normal component, add below props in after render as a var = this.props, then pull over method toggleLogin, push through temporaryDrawer as a prop then call in tempdrawer to change visibility.
+class Navbar extends React.Component {
+
+    state = {
+        visible: false,
     }
 
-    let button;
-    if (authenticated) {
-        button = null;
-    } else {
-        button = (
-            <TemporaryDrawer/>
+    toggleLogin = () => {
+        this.setState({
+            visible: !this.state.visible,
+        });
+    };
+
+    render() {
+        const {role, img, score, authenticated} = this.props;
+        
+        let links;
+        if (!role) {
+            links = null;
+        } else if (role === 'director') {
+            links = <DirectorLinks />;
+        } else {
+            links = <UserLinks img={img} score={score} />;
+        }
+
+        let button;
+        if (authenticated) {
+            button = null;
+        } else {
+            button = ( 
+                <Button style={styles.userButton}onClick={this.toggleLogin}><img style={styles.img}src={person} alt="signup or login"/></Button>
+            );
+        }
+
+        let login;
+        if(this.state.visible) {
+            login = (
+                <div style={{position: 'fixed', height: '100%', width: '100%', backgroundColor: 'rgba(0,0,0, 0.3)', zIndex:'1' }}>
+                <Login  />
+                </div>
+            );
+        } 
+
+        return (
+            <Fragment>
+                <AppBar position="static" style={styles.appbar}>
+                    <Toolbar style={{ height: '50px', backgroundColor: '#222', color: 'inherit' }}>
+                        <img src={Svg} alt="koala" style={{ height: '50px', marginRight: '20px' }} />
+                        <Typography variant="title" color="inherit" style={styles.Typo}>
+                            Koala-T
+                        </Typography>
+                        {button}
+                        {links}
+                    </Toolbar>
+                </AppBar>
+            {login}
+        </Fragment>
         );
     }
-
-    return (
-        <AppBar position="static" style={styles.appbar}>
-            <Toolbar style={{ height: '50px', backgroundColor: '#222', color: 'inherit' }}>
-                <img src={Svg} alt="koala" style={{ height: '50px', marginRight: '20px' }} />
-                <Typography variant="title" color="inherit" style={styles.Typo}>
-                    Koala-T
-                </Typography>
-                {button}
-                {links}
-            </Toolbar>
-        </AppBar>
-    );
-};
+}
 
 const mapStateToProps = state => ({
     role: state.user.role,

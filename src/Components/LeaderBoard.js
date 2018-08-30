@@ -9,9 +9,7 @@ import TablePaginationActionsWrapped from './paginationActionsTable';
 import { Paper, Table, TableBody, TableRow, TableCell, withStyles, TableFooter, TablePagination } from '@material-ui/core';
 
 const styles = () => ({
-    table: {
-        minWidth: 700,
-    },
+    
     title: {
         fontFamily: 'Julius Sans One',
         textAlign: 'center',
