@@ -6,13 +6,12 @@ import { Provider } from 'react-redux';
 import { createMuiTheme, MuiThemeProvider, CssBaseline } from '@material-ui/core';
 
 
-
 // import Amplify from 'aws-amplify';
 // import { withAuthenticator } from 'aws-amplify-react';
 
 // import awsExports from 'src/aws-exports';
 
-import Routes from './Routes';
+import Routes from './app-routes';
 import './_Styles/Index.scss';
 
 
@@ -30,7 +29,7 @@ const theme = createMuiTheme({
 
 const App = () => (
     <MuiThemeProvider theme={theme}>
-    <CssBaseline/>
+        <CssBaseline />
         <Provider store={store}>
             <Routes />
         </Provider>
