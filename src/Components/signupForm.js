@@ -1,68 +1,85 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
+import { withStyles, Button } from '@material-ui/core';
+import Input from '@material-ui/core/Input';
+import google from '../_Styles/Imgs/google.svg';
+import facebook from '../_Styles/Imgs/facebook.svg'
+import { GoogleAuthActions, AuthActions } from 'Actions';
 
-function TabContainer({ children, dir }) {
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    marginTop: '60px',
+  },
+  input: {
+    margin: theme.spacing.unit,
+  },
+  button: {
+    width: '60%',
+    height: '40px',
+    fontFamily: 'Julius Sans One',
+    fontSize: '20px',
+    background: '#222',
+    margin: 'auto',
+    marginTop: '60px',
+  },
+  img: {
+      height: '50px',
+      width: '50px',
+  },
+  socLink: {
+    borderRadius: "35px",
+  },
+  linksBox: {
+      display: 'flex',
+      justifyContent: 'space-around',
+      marginTop: '50px',
+  },
+});
+
+function Inputs(props) {
+  const { classes } = props;
   return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
-      {children}
-    </Typography>
+    <div className={classes.container}>
+    <Input
+      placeholder="Name"
+      className={classes.input}
+      inputProps={{
+        'aria-label': 'Description',
+      }}
+    />
+      <Input
+        placeholder="Email"
+        className={classes.input}
+        inputProps={{
+          'aria-label': 'Description',
+        }}
+      />
+      <Input
+        placeholder="Password"
+        className={classes.input}
+        inputProps={{
+          'aria-label': 'Description',
+        }}
+      />
+
+      <Button className={classes.button}>SignUp!</Button>
+
+       <h1 style={{margin: 'auto', marginTop: '50px',}}>OR</h1> 
+
+       <div className={classes.linksBox}>
+
+            <Button onClick={AuthActions.googleSignIn} className={classes.socLink}>
+                <img className={classes.img} src={google} alt="login with google"/>
+            </Button>
+
+           <Button className={classes.socLink}><img className={classes.img} src={facebook} alt="login with facebook"/></Button>
+       </div>
+    </div>
   );
 }
 
 
 
-const styles = theme => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    width: 500,
-    height: 600,
-    position: 'relative',
-    marginTop: '40px',
-    margin: 'auto',
-  },
-});
-
-class FullWidthTabs extends React.Component {
-  state = {
-    value: 0,
-  };
-
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
-
-  handleChangeIndex = index => {
-    this.setState({ value: index });
-  };
-
-  render() {
-    const { classes, theme } = this.props;
-
-    return (
-      <div className={classes.root}>
-        <AppBar position="static" color="default">
-          <Tabs
-            value={this.state.value}
-            onChange={this.handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            fullWidth
-          >
-            <Tab label="Login" />
-            <Tab label="Sign Up" />
-          </Tabs>
-        </AppBar>
-      
-          <TabContainer dir={theme.direction}>Item One</TabContainer>
-          <TabContainer dir={theme.direction}>Item Two</TabContainer>
-
-      </div>
-    );
-  }
-}
-
-export default withStyles(styles, { withTheme: true })(FullWidthTabs);
+export default withStyles(styles)(Inputs);

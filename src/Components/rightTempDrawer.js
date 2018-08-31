@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles, Drawer, Button, List, Divider } from '@material-ui/core/';
 import { GoogleAuthActions, AuthActions } from 'Actions';
 import person from '../_Styles/Imgs/personoutline.svg';
-import SignUp from '../Components/signupForm';
+import SignUp from '../Components/signupContainer';
 
 
 const styles = {

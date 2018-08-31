@@ -7,7 +7,7 @@ import { AppBar, Toolbar, Button, Typography, jssPreset } from '@material-ui/cor
 import '../_Styles/navbar.scss';
 import TemporaryDrawer from '../Components/rightTempDrawer';
 import { GoogleAuthActions, AuthActions } from 'Actions';
-import Login from '../Components/signupForm';
+import Login from '../Components/signupContainer';
 
 
 
@@ -22,6 +22,7 @@ const styles = {
         fontSize: '20px',
         padding: '0 30px' },
     img: {
+        marginTop: '6px',
         height: '50px',
         width: '50px',
         borderRadius: '30px',
