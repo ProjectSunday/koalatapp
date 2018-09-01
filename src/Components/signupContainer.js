@@ -21,8 +21,7 @@ function TabContainer({ children, dir }) {
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
-    height: 600,
+    width: '50%',
     position: 'relative',
     marginTop: '40px',
     margin: 'auto',
@@ -35,10 +34,16 @@ class signupContainer extends React.Component {
     loginVisible: true,
   };
 
-  toggleView = () => {
+  signUp = (e) => {
     this.setState({
-      loginVisible: !this.state.loginVisible,
-  });
+      loginVisible: false,
+    });
+  }
+
+  logIn = (e) => {
+    this.setState({
+      loginVisible: true,
+    });
   }
 
   handleChange = (event, value) => {
@@ -69,8 +74,8 @@ class signupContainer extends React.Component {
             textColor="primary"
             fullWidth
           >
-            <Tab onClick={this.toggleView} label="Login" />
-            <Tab onClick={this.toggleView} label="Sign Up" />
+            <Tab onClick={this.logIn} label="Login" />
+            <Tab onClick={this.signUp} label="Sign Up" />
           </Tabs>
         </AppBar>
       

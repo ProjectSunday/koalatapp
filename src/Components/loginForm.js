@@ -16,6 +16,12 @@ const styles = theme => ({
   input: {
     margin: theme.spacing.unit,
   },
+  inputWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '75%',
+    margin: 'auto',
+  },
   button: {
     width: '60%',
     height: '40px',
@@ -43,20 +49,23 @@ function Inputs(props) {
   const { classes } = props;
   return (
     <div className={classes.container}>
-      <Input
-        placeholder="Email"
-        className={classes.input}
-        inputProps={{
-          'aria-label': 'Description',
-        }}
-      />
-      <Input
-        placeholder="Password"
-        className={classes.input}
-        inputProps={{
-          'aria-label': 'Description',
-        }}
-      />
+      
+      <div className={classes.inputWrapper}>
+        <Input
+          placeholder="Email"
+          className={classes.input}
+          inputProps={{
+            'aria-label': 'Description',
+          }}
+        />
+        <Input
+          placeholder="Password"
+          className={classes.input}
+          inputProps={{
+            'aria-label': 'Description',
+          }}
+        />
+      </div>
 
       <Button className={classes.button}>Login!</Button>
 
@@ -68,7 +77,9 @@ function Inputs(props) {
                 <img className={classes.img} src={google} alt="login with google"/>
             </Button>
 
-           <Button className={classes.socLink}><img className={classes.img} src={facebook} alt="login with facebook"/></Button>
+           <Button className={classes.socLink}>
+                <img className={classes.img} src={facebook} alt="login with facebook"/>
+           </Button>
        </div>
     </div>
   );
@@ -97,88 +108,3 @@ export default withStyles(styles)(Inputs);
 
 
 
-// import React from 'react';
-// import { withStyles } from '@material-ui/core/styles';
-// import AppBar from '@material-ui/core/AppBar';
-// import Tabs from '@material-ui/core/Tabs';
-// import Tab from '@material-ui/core/Tab';
-// import Typography from '@material-ui/core/Typography';
-// import LoginForm from '../Components/loginForm';
-// import SignUpForm from '../Components/SignUpForm';
-
-
-// function TabContainer({ children, dir }) {
-//   return (
-//     <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
-//       {children}
-//     </Typography>
-//   );
-// }
-
-
-
-// const styles = theme => ({
-//   root: {
-//     backgroundColor: theme.palette.background.paper,
-//     width: 500,
-//     height: 600,
-//     position: 'relative',
-//     marginTop: '40px',
-//     margin: 'auto',
-//   },
-// });
-
-// class signupContainer extends React.Component {
-  
-//   state = {
-//     value: 0,
-//     loginVisible: true,
-//   };
-
-//   toggleView = () => {
-//     this.setState({
-//       loginVisible: !this.state.loginVisible,
-//   });
-//   }
-
-//   handleChange = (event, value) => {
-//     this.setState({ value });
-//   };
-
-//   handleChangeIndex = index => {
-//     this.setState({ value: index });
-//   };
-
-//   render() {
-//     const { classes, theme } = this.props;
-    
-//     let content;
-//     if(!this.state.loginVisible){
-//       return <SignUpForm />
-//     } else {
-//       return <LoginForm />
-//     }
-
-//     return (
-//       <div className={classes.root}>
-//         <AppBar position="static" color="default">
-//           <Tabs
-//             value={this.state.value}
-//             onChange={this.handleChange}
-//             indicatorColor="primary"
-//             textColor="primary"
-//             fullWidth
-//           >
-//             <Tab label="Login" />
-//             <Tab onClick={this.toggleView} label="Sign Up" />
-//           </Tabs>
-//         </AppBar>
-      
-//           <TabContainer dir={theme.direction}>{content}</TabContainer>
-
-//       </div>
-//     );
-//   }
-// }
-
-// export default withStyles(styles, { withTheme: true })(signupContainer);

@@ -104,10 +104,18 @@ class Navbar extends React.Component {
         visible: false,
     }
 
-    toggleLogin = () => {
+    toggleLogin = (e) => {
         this.setState({
             visible: !this.state.visible,
         });
+    };
+
+    closeLogin = (e) => {
+        if(e.target === e.currentTarget) {
+            this.setState({
+                visible: false
+            });
+        }
     };
 
     render() {
@@ -134,8 +142,11 @@ class Navbar extends React.Component {
         let login;
         if(this.state.visible) {
             login = (
-                <div style={{position: 'fixed', height: '100%', width: '100%', backgroundColor: 'rgba(0,0,0, 0.3)', zIndex:'1' }}>
-                <Login  />
+                <div onClick={this.closeLogin} 
+                style={{position: 'fixed', height: '100%', width: '100%', backgroundColor: 'rgba(0,0,0, 0.3)', zIndex:'1' }}>
+                
+                    <Login  />
+
                 </div>
             );
         } 

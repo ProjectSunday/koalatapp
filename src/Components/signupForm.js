@@ -12,6 +12,12 @@ const styles = theme => ({
     flexWrap: 'wrap',
     marginTop: '60px',
   },
+  inputWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '75%',
+    margin: 'auto',
+  },
   input: {
     margin: theme.spacing.unit,
   },
@@ -42,27 +48,29 @@ function Inputs(props) {
   const { classes } = props;
   return (
     <div className={classes.container}>
-    <Input
-      placeholder="Name"
-      className={classes.input}
-      inputProps={{
-        'aria-label': 'Description',
-      }}
-    />
-      <Input
-        placeholder="Email"
+      <div className={classes.inputWrapper}>
+        <Input
+        placeholder="Name"
         className={classes.input}
         inputProps={{
           'aria-label': 'Description',
         }}
       />
-      <Input
-        placeholder="Password"
-        className={classes.input}
-        inputProps={{
-          'aria-label': 'Description',
-        }}
-      />
+        <Input
+          placeholder="Email"
+          className={classes.input}
+          inputProps={{
+            'aria-label': 'Description',
+          }}
+        />
+        <Input
+          placeholder="Password"
+          className={classes.input}
+          inputProps={{
+            'aria-label': 'Description',
+          }}
+        />
+      </div>
 
       <Button className={classes.button}>SignUp!</Button>
 
