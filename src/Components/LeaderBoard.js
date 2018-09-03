@@ -4,17 +4,21 @@ import deepClone from 'lodash.clonedeep';
 import { PointActions } from 'Actions';
 import Svg from '../_Styles/Imgs/Koala.svg';
 import '../_Styles/leader-board.scss';
-import TablePaginationActionsWrapped from './paginationActionsTable';
+import TablePaginationActions from './paginationActionsTable';
 
 import { Paper, Table, TableBody, TableRow, TableCell, withStyles, TableFooter, TablePagination } from '@material-ui/core';
 
-const styles = () => ({
-    
+const styles = {
     title: {
         fontFamily: 'Julius Sans One',
         textAlign: 'center',
     },
-});
+    hello: {
+        flexWrap: 'wrap',
+    },
+
+};
+
 
 class LeaderBoard extends React.Component {
     constructor(props, context) {
@@ -43,7 +47,7 @@ class LeaderBoard extends React.Component {
 
             return (
                 <div className="leader-board-box">
-                    <div style={{ fontFamily: 'Julius Sans One', textAlign: 'center' }} className="title">
+                    <div style={styles.title} className="title">
                         <h1>Koala-T Leader Board</h1>
                     </div>
                     <Paper style={{ borderRadius: '0px' }}>
@@ -62,12 +66,12 @@ class LeaderBoard extends React.Component {
                                     <TablePagination
                                         colSpan={3}
                                         count={sorted.length}
+                                        style={styles.hello}
                                         rowsPerPage={rowsPerPage}
                                         page={page}
-                                        style={{margin: 'auto'}}
                                         onChangePage={this.handleChangePage}
                                         onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                                        ActionsComponent={TablePaginationActionsWrapped}
+                                        ActionsComponent={TablePaginationActions}
                                     />
                                 </TableRow>
                             </TableFooter>

@@ -16,6 +16,7 @@ import Login from '../Components/signupContainer';
 const styles = {
     appbar: {
         marginBottom: '100',
+        width: '100%',
     },
     font: {
         fontFamily: 'Julius Sans One',
@@ -143,7 +144,7 @@ class Navbar extends React.Component {
         if(this.state.visible) {
             login = (
                 <div onClick={this.closeLogin} 
-                style={{position: 'fixed', height: '100%', width: '100%', backgroundColor: 'rgba(0,0,0, 0.3)', zIndex:'1' }}>
+                style={{position: 'fixed', height: '100%', width: '100%', backgroundColor: 'rgba(0,0,0, 0.4)', zIndex:'1' }}>
                 
                     <Login  />
 
