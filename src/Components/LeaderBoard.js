@@ -9,12 +9,27 @@ import TablePaginationActionsWrapped from './paginationActionsTable';
 import { Paper, Table, TableBody, TableRow, TableCell, withStyles, TableFooter, TablePagination } from '@material-ui/core';
 
 const styles = () => ({
-    
+
     title: {
         fontFamily: 'Julius Sans One',
         textAlign: 'center',
     },
 });
+
+
+const s = {
+    root: {
+        background: 'red',
+    },
+    toolbar: {
+        background: 'green',
+    },
+};
+
+
+const MyPagination = withStyles(s)(TablePagination);
+// const MyPagination = TablePagination(s)
+
 
 class LeaderBoard extends React.Component {
     constructor(props, context) {
@@ -58,18 +73,17 @@ class LeaderBoard extends React.Component {
                                 ))}
                             </TableBody>
                             <TableFooter>
-                                <TableRow>
-                                    <TablePagination
-                                        colSpan={3}
-                                        count={sorted.length}
-                                        rowsPerPage={rowsPerPage}
-                                        page={page}
-                                        style={{margin: 'auto'}}
-                                        onChangePage={this.handleChangePage}
-                                        onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                                        ActionsComponent={TablePaginationActionsWrapped}
-                                    />
-                                </TableRow>
+                                <TableRow />
+                                <MyPagination
+                                    colSpan={3}
+                                    count={sorted.length}
+                                    rowsPerPage={rowsPerPage}
+                                    page={page}
+                                    style={{ margin: 'auto' }}
+                                    onChangePage={this.handleChangePage}
+                                    onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                                    ActionsComponent={TablePaginationActionsWrapped}
+                                />
                             </TableFooter>
                         </Table>
                     </Paper>
